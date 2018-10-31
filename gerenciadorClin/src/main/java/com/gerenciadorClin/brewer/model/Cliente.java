@@ -6,21 +6,25 @@ import javax.validation.constraints.NotNull;
 public class Cliente {
 
 	private String idcliente;
-	@NotBlank
+	
+	@NotBlank(message ="Nome é obrigatório")
 	private String nome;
-	@NotNull
+	@NotNull(message ="Nome é obrigatório")
 	private int numProntuario;
-	@NotNull
+	@NotNull(message ="Nome é obrigatório")
 	private String nunCIC;
-	@NotNull
+	@NotNull(message ="Nome é obrigatório")
 	private String CPF;
-	@NotBlank
+	@NotBlank(message ="Nome é obrigatório")
 	private String nomMae;
-	@NotBlank
+	@NotBlank(message ="Nome é obrigatório")
 	private String nomPai;
 	
+	public Cliente() {
+		
+	}
+	
 	public Cliente(String idcliente, String nome, String nunCIC, String CPF, String nomMae, String nomPai) {
-		super();
 		this.idcliente = idcliente;
 		this.nome = nome;
 		this.nunCIC = nunCIC;

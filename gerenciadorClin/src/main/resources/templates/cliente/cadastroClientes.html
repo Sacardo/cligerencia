@@ -4,8 +4,11 @@
 <body>
 	<h1>Ola! ThymeLeaf configurado</h1>
 </body>
+		<div th:each="erro: ${#fields.detailedErros('${cliente.*}')}">
+			</span th:text="${erro.message}"></span>
+		</div>
 	
-	<form method="POST">
+	<form method="POST" th:object="${cliente}">
 	   <span th:text="${mensagem}"></span>
 	   		   <br/>
 			<label for="nome">Nome:</label>

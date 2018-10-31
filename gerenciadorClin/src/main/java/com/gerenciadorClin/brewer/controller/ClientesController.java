@@ -15,15 +15,14 @@ import com.gerenciadorClin.brewer.model.Cliente;
 public class ClientesController {
 
 	@RequestMapping("/clientes/novo")
-	public String novo() {
+	public String novo(Model model) {
+		model.addAttribute(new Cliente());
 		return "cliente/cadastroClientes";
 	}
 	
 	@RequestMapping(value = "/clientes/novo", method = RequestMethod.POST)
 	public String cadastro(@Valid Cliente cliente, BindingResult result, Model model, RedirectAttributes attributes) {
 		if (result.hasErrors()) {
-			model.addAttribute("mensagem","Erro no Formulário");
-			System.out.println("Erro no objeto Cliente!!");
 			return "cliente/cadastroClientes";
 		}
 		attributes.addFlashAttribute("mensagem","Cliente salvo com sucesso!");
