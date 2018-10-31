@@ -8,6 +8,7 @@ public class Cliente {
 	@NotBlank
 	private String nome;
 	
+	
 	public Cliente(String idcliente, String nome) {
 		super();
 		this.idcliente = idcliente;
