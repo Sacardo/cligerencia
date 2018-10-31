@@ -4,6 +4,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.gerenciadorClin.brewer.model.Cliente;
+
 @Controller
 public class ClientesController {
 	
@@ -13,8 +15,8 @@ public class ClientesController {
 	}
 	
 	@RequestMapping(value = "/clientes/novo", method = RequestMethod.POST)
-	public String cadastro() {
-		System.out.println("Tudo ok, até aqui");
+	public String cadastro(Cliente cliente) {
+		System.out.println(cliente.getNome() + " Tudo ok, até aqui");
 		return "cliente/cadastroClientes";
 	}
 
