@@ -3,15 +3,29 @@
 	  xmlns:th="http://www.thymeleaf.org">
 <body>
 	<h1>Ola! ThymeLeaf configurado</h1>
+</body>
 	
 	<form method="POST">
-	<span th:text="${mensagem}"></span>
-	<br/>
-	<label for="nome">Nome:</label>
-	<input type="text" id="nome" name="nome">
-	<br>
-	<input type="submit" value="salvar">
-	
+	   <span th:text="${mensagem}"></span>
+	   		   <br/>
+			<label for="nome">Nome:</label>
+		<input type="text" id="nome" name="nome"/>
+				<br>
+			<label for="numProntuario">Número Prontuário:</label>
+		<input type="text" id="numPronturio" name="numProntuario"/>
+				<br>
+			<label for="nunCIC">N. do RG</label>
+		<input type="text" id="nunCIC" name="nunCIC"/>
+				<br>
+			<label for="CPF">CPF</label>
+		<input type="text" id="CPF" name="CPF"/>
+				<br>
+			<label for="nomMae">Nome da Mãe</label>
+		<input type="text" id="nomMae" name="nomMae"/>
+				<br>
+			<label for="nomPai">Nome Pai</label>
+		<input type="text" id="nomPai" name="nomPai"/>
+				<br>
+		<input type="submit" value="salvar"/>
 	</form>
-</body>
 </html>
