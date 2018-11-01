@@ -15,23 +15,16 @@ import com.gerenciadorClin.brewer.model.Cliente;
 public class ClientesController {
 
 	@RequestMapping("/clientes/novo")
-	public String novo(Model model) {
-		model.addAttribute(new Cliente());
+	public String novo(Cliente cliente) {
 		return "cliente/cadastroClientes";
 	}
 	
 	@RequestMapping(value = "/clientes/novo", method = RequestMethod.POST)
 	public String cadastro(@Valid Cliente cliente, BindingResult result, Model model, RedirectAttributes attributes) {
 		if (result.hasErrors()) {
-			return "cliente/cadastroClientes";
+			return novo(cliente);
 		}
 		attributes.addFlashAttribute("mensagem","Cliente salvo com sucesso!");
-		System.out.println(cliente.getNome());
-		System.out.println(cliente.getNumProntuario());
-		System.out.println(cliente.getNunCIC());
-		System.out.println(cliente.getCPF());
-		System.out.println(cliente.getNomMae());
-		System.out.println(cliente.getNomPai());
 		return "redirect:/clientes/novo";
 		
 	}

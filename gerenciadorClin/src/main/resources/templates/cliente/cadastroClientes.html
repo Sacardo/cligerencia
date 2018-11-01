@@ -2,32 +2,32 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	  xmlns:th="http://www.thymeleaf.org">
 <body>
-	<h1>Ola! ThymeLeaf configurado</h1>
+	<h1>Cadastro Clientes</h1>
 </body>
-		<div th:each="erro: ${#fields.detailedErros('${cliente.*}')}">
-			</span th:text="${erro.message}"></span>
+		<div th:each="erro: ${#fields.detailedErrors('${cliente.*}')}">
+			<span th:text="${erro.message}"></span>
 		</div>
 	
 	<form method="POST" th:object="${cliente}">
 	   <span th:text="${mensagem}"></span>
 	   		   <br/>
 			<label for="nome">Nome:</label>
-		<input type="text" id="nome" name="nome"/>
+		<input type="text" id="nome" th:field="*{nome}"/>
 				<br>
 			<label for="numProntuario">Número Prontuário:</label>
-		<input type="text" id="numPronturio" name="numProntuario"/>
+		<input type="text" id="numPronturio" th:field="*{numProntuario}"/>
 				<br>
 			<label for="nunCIC">N. do RG</label>
-		<input type="text" id="nunCIC" name="nunCIC"/>
+		<input type="text" id="nunCIC" th:field="*{nunCIC}"/>
 				<br>
 			<label for="CPF">CPF</label>
-		<input type="text" id="CPF" name="CPF"/>
+		<input type="text" id="CPF" th:field="*{CPF}"/>
 				<br>
 			<label for="nomMae">Nome da Mãe</label>
-		<input type="text" id="nomMae" name="nomMae"/>
+		<input type="text" id="nomMae" th:field="*{nomMae}"/>
 				<br>
 			<label for="nomPai">Nome Pai</label>
-		<input type="text" id="nomPai" name="nomPai"/>
+		<input type="text" id="nomPai" th:field="*{nomPai}"/>
 				<br>
 		<input type="submit" value="salvar"/>
 	</form>

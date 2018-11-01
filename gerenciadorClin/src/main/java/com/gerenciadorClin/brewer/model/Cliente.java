@@ -7,30 +7,36 @@ public class Cliente {
 
 	private String idcliente;
 	
-	@NotBlank(message ="Nome é obrigatório")
+	@NotBlank(message ="É obrigatório o Nome")
 	private String nome;
-	@NotNull(message ="Nome é obrigatório")
-	private int numProntuario;
-	@NotNull(message ="Nome é obrigatório")
+	
+	@NotBlank(message ="É obrigatório Numero de Prontuario")
+	private String numProntuario;
+	
+	@NotNull(message ="É obrigatório  RG")
 	private String nunCIC;
-	@NotNull(message ="Nome é obrigatório")
+	
+	@NotNull(message ="É obrigatório CPF")
 	private String CPF;
-	@NotBlank(message ="Nome é obrigatório")
+	
+	@NotBlank(message ="É obrigatório Nome da Mãe")
 	private String nomMae;
-	@NotBlank(message ="Nome é obrigatório")
+	
+	@NotBlank(message ="É obrigatório Nome do Pai")
 	private String nomPai;
 	
 	public Cliente() {
 		
 	}
 	
-	public Cliente(String idcliente, String nome, String nunCIC, String CPF, String nomMae, String nomPai) {
-		this.idcliente = idcliente;
+	public Cliente(String nome,String numProntuario, String nunCIC, String CPF, String nomMae, String nomPai ) {
 		this.nome = nome;
+		this.numProntuario = numProntuario;
 		this.nunCIC = nunCIC;
 		this.CPF = CPF;
 		this.nomMae = nomMae;
 		this.nomPai = nomPai;
+	
 	}
 	
 	public String getNomMae() {
@@ -49,8 +55,6 @@ public class Cliente {
 		this.nomPai = nomPai;
 	}
 
-	
-	
 	public String getCPF() {
 		return CPF;
 	}
@@ -67,11 +71,11 @@ public class Cliente {
 		this.nunCIC = nunCIC;
 	}
 
-	public int getNumProntuario() {
+	public String getNumProntuario() {
 		return numProntuario;
 	}
 
-	public void setNumProntuario(int numProntuario) {
+	public void setNumProntuario(String numProntuario) {
 		this.numProntuario = numProntuario;
 	}
 	
