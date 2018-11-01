@@ -26,6 +26,10 @@ public class ClientesController {
 		}
 		attributes.addFlashAttribute("mensagem","Cliente salvo com sucesso!");
 		return "redirect:/clientes/novo";
-		
+	}
+	
+	@RequestMapping("/clientes/cadastro")
+	public String cadastro(){
+		return "cliente/cadastro-produto";
 	}
 }
