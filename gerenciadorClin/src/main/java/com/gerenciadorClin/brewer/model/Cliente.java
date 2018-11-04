@@ -1,14 +1,35 @@
 package com.gerenciadorClin.brewer.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 @Entity
-@Table
+@Table(name = "cliente")
 public class Cliente {
 
+	public Cliente(String nome,String numProntuario, String nunCIC, String CPF, String nomMae, String nomPai ) {
+		this.nome = nome;
+		this.numProntuario = numProntuario;
+		this.nunCIC = nunCIC;
+		this.CPF = CPF;
+		this.nomMae = nomMae;
+		this.nomPai = nomPai;
+	}
+	
+
+	public Cliente() {
+		
+	}
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private String idcliente;
 	
 	@NotBlank(message ="É obrigatório o Nome")
@@ -28,21 +49,38 @@ public class Cliente {
 	
 	@NotBlank(message ="É obrigatório Nome do Pai")
 	private String nomPai;
+
+	@ManyToOne
+	@JoinColumn(name ="id_endereco")
+	private Endereco endereco;
 	
-	public Cliente() {
-		
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((idcliente == null) ? 0 : idcliente.hashCode());
+		return result;
 	}
-	
-	public Cliente(String nome,String numProntuario, String nunCIC, String CPF, String nomMae, String nomPai ) {
-		this.nome = nome;
-		this.numProntuario = numProntuario;
-		this.nunCIC = nunCIC;
-		this.CPF = CPF;
-		this.nomMae = nomMae;
-		this.nomPai = nomPai;
-	
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Cliente other = (Cliente) obj;
+		if (idcliente == null) {
+			if (other.idcliente != null)
+				return false;
+		} else if (!idcliente.equals(other.idcliente))
+			return false;
+		return true;
 	}
-	
+
+
 	public String getNomMae() {
 		return nomMae;
 	}
@@ -99,5 +137,12 @@ public class Cliente {
 		this.nome = nome;
 	}
 	
+	public Endereco getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
+	}
 	
 }

@@ -25,8 +25,10 @@
 		<hibernate-validator.version>6.0.13.Final</hibernate-validator.version>
 		<log4j.version>2.11.1</log4j.version>
 		<jcl-over-slf4j.version>1.7.25</jcl-over-slf4j.version>
+		<flyway-maven-plugin.version>4.0.2</flyway-maven-plugin.version>
 		<!-- JPA / Hibernate -->
         <hibernate.version>5.3.7.Final</hibernate.version>
+        <mysql-connector-java.version>8.0.13</mysql-connector-java.version>
 
 		<java.versioin>1.8</java.versioin>
 	</properties>
@@ -38,6 +40,14 @@
 				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.flywaydb</groupId>
+				<artifactId>flyway-maven-plugin</artifactId>
+				<version>${flyway-maven-plugin.version}</version>
+				<configuration>
+				<driver>com.mysql.cj.jdbc.Driver</driver>
 				</configuration>
 			</plugin>
 		</plugins>
@@ -132,5 +142,12 @@
 		<version>${hibernate.version}</version>
 		<scope>compile</scope>
 	</dependency>
+	<!-- MySQL Driver -->
+  <dependency>
+		<groupId>mysql</groupId>
+		<artifactId>mysql-connector-java</artifactId>
+		<version>${mysql-connector-java.version}</version>
+		<scope>provided</scope>
+ </dependency>
 	</dependencies>
 </project>
