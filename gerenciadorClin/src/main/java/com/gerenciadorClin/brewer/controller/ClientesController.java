@@ -13,10 +13,10 @@ import com.gerenciadorClin.brewer.model.Cliente;
 
 @Controller
 public class ClientesController {
-
+	
 	@RequestMapping("/clientes/novo")
 	public String novo(Cliente cliente) {
-		return "cliente/cadastroClientes";
+			return "cliente/cadastroClientes";
 	}
 	
 	@RequestMapping(value = "/clientes/novo", method = RequestMethod.POST)
