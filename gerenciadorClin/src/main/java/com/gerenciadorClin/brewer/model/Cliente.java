@@ -10,6 +10,8 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
+import com.sun.org.apache.bcel.internal.generic.LNEG;
+
 @Entity
 @Table(name = "cliente")
 public class Cliente {
@@ -30,7 +32,7 @@ public class Cliente {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private String idcliente;
+	private Long idcliente;
 	
 	@NotBlank(message ="É obrigatório o Nome")
 	private String nome;
@@ -121,11 +123,11 @@ public class Cliente {
 		this.numProntuario = numProntuario;
 	}
 	
-	public String getIdcliente() {
+	public Long getIdcliente() {
 		return idcliente;
 	}
 	
-	public void setIdcliente(String idcliente) {
+	public void setIdcliente(Long idcliente) {
 		this.idcliente = idcliente;
 	}
 	
