@@ -10,26 +10,10 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
-import com.sun.org.apache.bcel.internal.generic.LNEG;
-
 @Entity
 @Table(name = "cliente")
 public class Cliente {
 
-	public Cliente(String nome,String numProntuario, String nunCIC, String CPF, String nomMae, String nomPai ) {
-		this.nome = nome;
-		this.numProntuario = numProntuario;
-		this.nunCIC = nunCIC;
-		this.CPF = CPF;
-		this.nomMae = nomMae;
-		this.nomPai = nomPai;
-	}
-	
-
-	public Cliente() {
-		
-	}
-	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idcliente;
@@ -56,33 +40,6 @@ public class Cliente {
 	@JoinColumn(name ="id_endereco")
 	private Endereco endereco;
 	
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((idcliente == null) ? 0 : idcliente.hashCode());
-		return result;
-	}
-
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Cliente other = (Cliente) obj;
-		if (idcliente == null) {
-			if (other.idcliente != null)
-				return false;
-		} else if (!idcliente.equals(other.idcliente))
-			return false;
-		return true;
-	}
-
-
 	public String getNomMae() {
 		return nomMae;
 	}
@@ -146,5 +103,31 @@ public class Cliente {
 	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
 	}
-	
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((idcliente == null) ? 0 : idcliente.hashCode());
+		return result;
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Cliente other = (Cliente) obj;
+		if (idcliente == null) {
+			if (other.idcliente != null)
+				return false;
+		} else if (!idcliente.equals(other.idcliente))
+			return false;
+		return true;
+	}
+
 }

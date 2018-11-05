@@ -19,10 +19,10 @@ public class ClientesController {
 	@Autowired
 	private Clientes clientes;
 	
-	@RequestMapping("/clientes/novo")
+	@RequestMapping("/clientes/novo")	
 	public String novo(Cliente cliente) {
-		clientes.findAll();
-			return "cliente/cadastroClientes";
+	clientes.findAll();
+		return "cliente/cadastroClientes";
 	}
 	
 	@RequestMapping(value = "/clientes/novo", method = RequestMethod.POST)
