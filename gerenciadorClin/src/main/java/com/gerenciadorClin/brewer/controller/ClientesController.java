@@ -16,12 +16,11 @@ import com.gerenciadorClin.brewer.repository.Clientes;
 @Controller
 public class ClientesController {
 	
-	@Autowired
-	private Clientes clientes;
+/*	@Autowired
+	private Clientes clientes;*/
 	
 	@RequestMapping("/clientes/novo")	
 	public String novo(Cliente cliente) {
-	clientes.findAll();
 		return "cliente/cadastroClientes";
 	}
 	

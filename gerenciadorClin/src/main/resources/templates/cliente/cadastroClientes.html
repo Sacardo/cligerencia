@@ -26,7 +26,7 @@
 
 	    <div class="navbar-header">
 	      <a class="navbar-brand  hidden-xs" href="#">
-	        <img alt="AlgaWorks" src="/gerenciador/layout/images/logo.png"/>
+	        <img alt="" src=""/>
 	      </a>
 
 	      <ul class="nav  navbar-nav">
@@ -79,18 +79,31 @@
 
         <li class="aw-menu__item  is-active">
           <a href="#">
-            <i class="fa  fa-fw  fa-file-text"></i><span>Cadastros</span>
+            <i class="fa  fa-fw  fa-file-text"></i><span>Cadastros Clientes</span>
             <i class="aw-menu__navigation-icon  fa"></i>
           </a>
-      
-          <ul class="aw-menu__list  aw-menu__list--sublist">
-            <li class="aw-menu__item  aw-menu__item--link"><a href="cadastro-produto.html">Cadastro de Cliente</a></li>
-            <li class="aw-menu__item  aw-menu__item--link  is-active"><a href="pesquisa-produtos.html">Cadastro de Funcionário</a></li>
-            <li class="aw-menu__item  aw-menu__item--link"><a href="tabela-sem-dados.html">Tabela sem dados</a></li>
+          
+              <ul class="aw-menu__list  aw-menu__list--sublist">
+               <li class="aw-menu__item  aw-menu__item--link  is-active"><a href="pesquisa-produtos.html">Pesquisar de Clientes</a></li>
+            	<li class="aw-menu__item  aw-menu__item--link"><a href="cadastro-cliente.html">Cadastro de Cliente</a></li>
+               	<li class="aw-menu__item  aw-menu__item--link"><a href="tabela-sem-dados.html">Relatório Clientes</a></li>
           </ul>
         </li>
-
-        <li class="aw-menu__item  is-expanded">
+      
+      	<li class="aw-menu__item  is-active">
+          <a href="#">
+            <i class="fa  fa-fw  fa-file-text"></i><span>Cadastros Funcionários</span>
+            <i class="aw-menu__navigation-icon  fa"></i>
+          </a>
+          
+              <ul class="aw-menu__list  aw-menu__list--sublist">
+            <li class="aw-menu__item  aw-menu__item--link"><a href="cadastro-cliente.html">Pesquisar Funcionários</a></li>
+            <li class="aw-menu__item  aw-menu__item--link  is-active"><a href="pesquisa-produtos.html">Cadastro de Funcionários</a></li>
+            <li class="aw-menu__item  aw-menu__item--link"><a href="tabela-sem-dados.html">Relatório Funcionários</a></li>
+          </ul>
+        </li>
+      
+         <li class="aw-menu__item  is-expanded">
           <a href="#">
             <i class="fa  fa-fw  fa-file-text"></i><span>Páginas comuns</span>
             <i class="aw-menu__navigation-icon  fa"></i>
@@ -137,12 +150,12 @@
 									<input id="input-cliente-prontuario" type="text" class="form-control"/>
 							</div>
 							
-							<div class="col-xs-4 col-sm-2 form-group">
+							<div class="col-xs-6 col-sm-2 form-group">
 									<label for="input-cliente-dtCadastro">Data Cadastro</label>
 									<input id="input-cliente-dtCadastro" class="form-control" placeholder="dd/mm/aaaa" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" maxlength="10" autocomplete="off" type="text"/>
 							</div>
 							
-							<div class="col-xs-4  col-sm-2 form-group">
+							<div class="col-xs-6  col-sm-2 form-group">
 									<label for="input-cliente-hrCadastro">Hora Cadastro</label>
 									<input id="input-cliente-hrCadastro" type="text" class="form-control"/>
 							</div>
@@ -153,16 +166,16 @@
 									<input id="input-cliente-nome" type="text" class="form-control"/>
 							</div>
 							
-								
 							<div class="col-xs-4 col-sm-2 form-group">
 							 		<label for="input-cliente-dtNasc">Data Nasc.</label>
-									<input id="input-cliente-dtNasc" type="text" class="form-control" placeholder="dd/mm/aaaa"/>
+									<input id="input-cliente-dtNasc" type="text" class="form-control" placeholder="dd/mm/aaaa" data-inputmask-inputformat="dd/mm/yyyy"/>
 							</div>
 							
 							<div class="col-xs-4 col-sm-1 form-group">
 							 		<label for="input-cliente-idade">Idade</label>
 									<input id="input-cliente-idade" type="text" class="form-control"/>
 							</div>
+
 							<div class="col-xs-12 col-sm-6 form-group">
 									<label for="input-cliente-nmMae">Nome da Mãe</label>
 									<input id="input-cliente-nmMae" type="text" class="form-control"/>
@@ -177,13 +190,29 @@
 									<label for="input-cliente-hrCadastro">CPF</label>
 									<input id="input-cliente-hrCadastro" type="text" class="form-control"/>
 							</div>
-							<div class="col-xs-6  col-sm-2 form-group">
+
+							<div class="col-xs-6  col-sm-2 text-left  form-group">
 									<label for="input-cliente-hrCadastro">RG</label>
 									<input id="input-cliente-hrCadastro" type="text" class="form-control"/>
 							</div>
+							<div class="col-xs-6  col-sm-8 col-sm-offset-8 form-group">
+						    </div>
+							<div class="col-xs-12 col-sm-6 form-group" >
+									<label for="input-cliente-endereco">Endereço</label>
+									<input id="input-cliente-nmPai" class="form-control" type="text"/>
+							</div>
+							
+							<div class="col-xs-12 col-sm-4 form-group">
+									<label for="input-cliente-bairro">Bairro</label>
+									<input id="input-cliente-nmPai" class="form-control" type="text"/>
+							</div>
+							
+								<div class="col-xs-4 col-sm-1 form-group">
+									<label for="input-cliente-CEP">CEP</label>
+									<input id="input-cliente-nmPai" class="form-control" type="text"/>
+							</div>
+					</div>
 					
-			</div>
-			
 		<div class="form-group">
 			<label for="input-produto-descricao">Descrição</label>
 			<textarea id="input-produto-descricao" rows="3" class="form-control"></textarea>
