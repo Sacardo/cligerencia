@@ -5,7 +5,7 @@
             factory="org.apache.naming.factory.BeanFactory"
             type="com.mchange.v2.c3p0.ComboPooledDataSource"
             driverClass="com.mysql.cj.jdbc.Driver"
-            jdbcUrl="jdbc:mysql://localhost/gerenciador?useSSL=false"
+            jdbcUrl="jdbc:mysql://localhost/gerenciador?useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC"
             user="root"
             password="root" 
             initialPoolSize="5" 
@@ -13,3 +13,4 @@
             maxPoolSize="5" 
      />
 </Context>
+
