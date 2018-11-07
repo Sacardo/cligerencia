@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-	  xmlns:th="http://www.thymeleaf.org">
+<html lang="pt">
 <head>
 	<meta charset="UTF-8"/>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-	<title>Gerênciador Clinica</title>
+	<title>Clientes</title>
 
 	<link rel="stylesheet" type="text/css" href="/gerenciador/layout/stylesheets/vendors.min.css"/>
 	<link rel="stylesheet" type="text/css" href="/gerenciador/layout/stylesheets/algaworks.min.css"/>
@@ -20,6 +19,7 @@
 	<![endif]-->
 </head>
 <body>
+
 <div class="aw-layout-page">
 	<nav class="navbar  navbar-fixed-top  navbar-default  js-sticky-reference" id="main-navbar">
 	  <div class="container-fluid">
@@ -145,77 +145,112 @@
 	<form method="get"  th:object="${cliente}" class="form-vertical  js-form-loading">
 	
 				<div class="row">
-							<div class="col-xs-12 col-sm-2 cols-sm-offset-1 form-group">
-									<label for="input-cliente-prontuario">Nº. do Prontuário</label>
-									<input id="input-cliente-prontuario" type="text" class="form-control"/>
-							</div>
+												
+							<div class="col-xs-12 col-sm-2 form-group">
+	                              <div class="input-group">
+	                              <span class="input-group-addon"><i class="glyphicon glyphicon-duplicate"></i></span>
+	                              <input id="fullName" name="Nome Paciente" placeholder="Nº Prontuário" class="form-control" required="true" value="" type="text">
+	                              </div>
+                            </div>
 							
 							<div class="col-xs-6 col-sm-2 form-group">
-									<label for="input-cliente-dtCadastro">Data Cadastro</label>
-									<input id="input-cliente-dtCadastro" class="form-control" placeholder="dd/mm/aaaa" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" maxlength="10" autocomplete="off" type="text"/>
-							</div>
+	                              <div class="input-group">
+	                              <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+	                              <input id="fullName" name="Nome Paciente" placeholder="Data Cadastro" class="form-control" required="true" value="" type="text">
+	                              </div>
+                            </div>
 							
-							<div class="col-xs-6  col-sm-2 form-group">
-									<label for="input-cliente-hrCadastro">Hora Cadastro</label>
-									<input id="input-cliente-hrCadastro" type="text" class="form-control"/>
-							</div>
+							<div class="col-xs-6 col-sm-2 form-group">
+	                              <div class="input-group">
+	                              <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+	                              <input id="fullName" name="Nome Paciente" placeholder="Hora Cadastro." class="form-control" required="true" value="" type="text">
+	                              </div>
+                            </div>
 					</div>
 					
 			<div class="row">
-							<div class="col-xs- 12 col-sm-8 inputGroupContainer">
+							<div class="col-xs- 12 col-sm-8 form-group">
                               <div class="input-group">
                               <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                               <input id="fullName" name="Nome Paciente" placeholder="Nome Paciente" class="form-control" required="true" value="" type="text">
                               </div>
                             </div>
 							
+									
 							<div class="col-xs-6 col-sm-2 form-group">
-							 		<label for="input-cliente-dtNasc">Data Nasc.</label>
-									<input id="input-cliente-dtNasc" type="text" class="form-control" placeholder="dd/mm/aaaa" data-inputmask-inputformat="dd/mm/yyyy"/>
-							</div>
+	                              <div class="input-group">
+	                              <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+	                              <input id="fullName" name="Nome Paciente" placeholder="Data Nasc." class="form-control" required="true" value="" type="text">
+	                              </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-2 form-group">
+	                              <div class="input-group">
+	                              <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+	                              <input id="fullName" name="Nome Paciente" placeholder="Idade" class="form-control" required="true" value="" type="text">
+	                              </div>
+                            </div>
+						
+							<div class="col-xs- 12 col-sm-6 form-group">
+	                              <div class="input-group">
+	                              <span class="input-group-addon"><i class="glyphicon glyphicon-credit-card"></i></span>
+	                              <input id="fullName" name="Nome Paciente" placeholder="CPF" class="form-control" required="true" value="" type="text">
+	                              </div>
+                            </div>
+                            
+                            <div class="col-xs- 12 col-sm-6 form-group">
+                              <div class="input-group">
+                              <span class="input-group-addon"><i class="glyphicon glyphicon-credit-card"></i></span>
+                              <input id="fullName" name="Nome Paciente" placeholder="RG" class="form-control" required="true" value="" type="text">
+                              </div>
+                            </div>
 							
-							<div class="col-xs-6 col-sm-1 form-group">
-							 		<label for="input-cliente-idade">Idade</label>
-									<input id="input-cliente-idade" type="text" class="form-control"/>
-							</div>
-							
-							<div class="col-xs-6  col-sm-2 form-group">
-									<label for="input-cliente-hrCadastro">CPF</label>
-									<input id="input-cliente-hrCadastro" placeholder="00000-000" data-inputmask-inputformat="00000-000" type="text" class="form-control "/>
-							</div>
-
-							<div class="col-xs-6  col-sm-2 text-left  form-group">
-									<label for="input-cliente-hrCadastro">RG</label>
-									<input id="input-cliente-hrCadastro" type="text" class="form-control"/>
-							</div>
-							
-							<div class="col-xs-6  col-sm-8 col-sm-offset-8 form-group"></div>
-
-							<div class="col-xs-12 col-sm-6 form-group">
-									<label for="input-cliente-nmMae">Nome da Mãe</label>
-									<input id="input-cliente-nmMae" type="text" class="form-control"/>
-							</div>
-							
-							<div class="col-xs-12 col-sm-6 form-group">
-									<label for="input-cliente-nmPai">Nome do Pai</label>
-									<input id="input-cliente-nmPai" class="form-control" type="text"/>
-							</div>
-							
-						    <div class="col -xs-12 col-sm-6 form-group">
+  							<div class="col-xs-12 col-sm-6 form-group">
+							    <div class="input-group">
+							        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+							  <input name="nmMae" placeholder="Nome da Mãe" class="form-control" type="text">
+							    </div>
+							 </div>
+							 
+							 	<div class="col-xs-12 col-sm-6 form-group">
+							    <div class="input-group">
+							        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+							  <input name="nmMae" placeholder="Nome do Pai" class="form-control" type="text">
+							    </div>
+							 </div>
+							 
+							   <div class="col-xs-12 col-sm-6 form-group">
+							    <div class="input-group">
+							        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+							  <input name="address" placeholder="E-mail" class="form-control" type="text">
+							    </div>
+							 </div>
+							   <div class="col-xs-12 col-sm-3 form-group">
+							   <div class="input-group">
+							        <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
+							  <input name="address" placeholder="Celular" class="form-control" type="text">
+							   </div>
+							 </div>
+							   <div class="col-xs-12 col-sm-3 form-group">
+							   <div class="input-group">
+							        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+							  <input name="address" placeholder="Telefone" class="form-control" type="text">
+							   </div>
+							 </div>
+						    <div class="col-xs-12 col-sm-6 form-group">
 							    <div class="input-group">
 							        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
 							  <input name="address" placeholder="Endereço" class="form-control" type="text">
 							    </div>
 							 </div>
 							 
-							 <div class="col-xs-12 col-sm-1 form-group">
+							 <div class="col-xs-12 col-sm-2 form-group">
 							    <div class="input-group">
 							        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
 							  		<input name="bairro" placeholder="Número" class="form-control"  type="text">
 							    </div>
 							  </div>
 							  
-							   <div class="col-xs-12 col-sm-5 form-group">
+							   <div class="col-xs-12 col-sm-4 form-group">
 							    <div class="input-group">
 							        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
 							  		<input name="bairro" placeholder="Complemento" class="form-control"  type="text">
@@ -229,109 +264,37 @@
 							    </div>
 							  </div>	
 							
-							<div class="col-xs-6 col-sm-1 form-group">
+							<div class="col-xs-6 col-sm-2 form-group">
 							    <div class="input-group">
 							        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
 							  		<input name="zip" placeholder="00000-000" data-inputmask-inputformat="00000-000" class="form-control"  type="text">
 							    </div>
 							</div>
 										
-							 <div class="col-xs-12 col-sm-3 form-group">
+							 <div class="col-xs-12 col-sm-2 form-group">
 							    <div class="input-group">
 							        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
 							  		<input name="city" placeholder="Cidade" class="form-control"  type="text">
 							    </div>
-							  </div>	
-										
-							<div class="col-xs-4 col-sm-2 form-group" >
-						    <div class="col-sm-4 selectContainer">
-							    <div class="input-group">
-							        <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
-							    <select name="state" class="form-control selectpicker" >
-							      <option value=" " >Please select your state</option>
-							      <option>Alabama</option>
-							      <option>Alaska</option>
-							      <option >Arizona</option>
-							      <option >Arkansas</option>
-							      <option >California</option>
-							      <option >Colorado</option>
-							      <option >Connecticut</option>
-							      <option >Delaware</option>
-							      <option >District of Columbia</option>
-							      <option> Florida</option>
-							      <option >Georgia</option>
-							      <option >Hawaii</option>
-							      <option >daho</option>
-							      <option >Illinois</option>
-							      <option >Indiana</option>
-							      <option >Iowa</option>
-							      <option> Kansas</option>
-							      <option >Kentucky</option>
-							      <option >Louisiana</option>
-							      <option>Maine</option>
-							      <option >Maryland</option>
-							      <option> Mass</option>
-							      <option >Michigan</option>
-							      <option >Minnesota</option>
-							      <option>Mississippi</option>
-							      <option>Missouri</option>
-							      <option>Montana</option>
-							      <option>Nebraska</option>
-							      <option>Nevada</option>
-							      <option>New Hampshire</option>
-							      <option>New Jersey</option>
-							      <option>New Mexico</option>
-							      <option>New York</option>
-							      <option>North Carolina</option>
-							      <option>North Dakota</option>
-							      <option>Ohio</option>
-							      <option>Oklahoma</option>
-							      <option>Oregon</option>
-							      <option>Pennsylvania</option>
-							      <option>Rhode Island</option>
-							      <option>South Carolina</option>
-							      <option>South Dakota</option>
-							      <option>Tennessee</option>
-							      <option>Texas</option>
-							      <option> Uttah</option>
-							      <option>Vermont</option>
-							      <option>Virginia</option>
-							      <option >Washington</option>
-							      <option >West Virginia</option>
-							      <option>Wisconsin</option>
-							      <option >Wyoming</option>
-							    </select>
-							  </div>
-							</div>
-							</div>
-						
-					</div>
-					
-		<div class="form-group">
-			<label for="input-produto-descricao">Descrição</label>
-			<textarea id="input-produto-descricao" rows="3" class="form-control"></textarea>
-		</div>
-
-		<div class="row">
-			<div class="col-sm-3">
-				<div class="form-group">
-					<label for="input-produto-preco">Preço unitário</label>
-					<input id="input-produto-preco" type="text" class="form-control" placeholder="R$"/>
+							 </div>
+						  <div class="col-xs-12 col-sm-2 form-group">
+						    <div class="input-group">
+						        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+						  		<input name="city" placeholder="Estado" class="form-control"  type="text">
+						    </div>
+					  </div>
+					  
+					  <div class="col-xs-12 col-sm-12 form-group">
+						<div class="input-group">
+							<span class="input-group-addon"><i class="glyphicon glyphicon-align-left"></i></span>
+							<textarea class="message form-control" placeholder="Descrição" cols="35" name="message" rows="8"></textarea>
+						</div>
 				</div>
-			</div>
-			
-			<div class="col-sm-3">
-				<div class="form-group">
-					<label for="input-produto-estoque">Estoque</label>
-					<input id="input-produto-estoque" type="text" class="form-control" placeholder="Unidades"/>
-				</div>
-			</div>
-		</div>
-		
-		<div class="form-group">
-			  <button class="btn  btn-primary" type="submit">Salvar</button>
-			  <a href="pesquisa-produtos.html" class="btn  btn-default">Cancelar</a>
-			
+		</div>		
+				
+			<div class="form-group">
+				  <button class="btn  btn-primary" type="submit">Salvar</button>
+				  <a href="pesquisa-produtos.html" class="btn  btn-default">Cancelar</a>
 			</div>
 		</form>
 	</div>
@@ -339,11 +302,10 @@
 
 	<footer class="aw-layout-footer  js-content">
 		<div class="container-fluid">
-			<span class="aw-footer-disclaimer">&copy; 2016 AlgaWorks. Todos os direitos reservados.</span>
+			<span class="aw-footer-disclaimer">&copy; 2018 NEW CODY. Todos os direitos reservados.</span>
 		</div>
 	</footer>
 	<script src="/gerenciador/layout/javascripts/vendors.min.js"></script>
 	<script src="/gerenciador/layout/javascripts/algaworks.min.js"></script>
-	</form>
-	</body>
+</body>
 </html>
