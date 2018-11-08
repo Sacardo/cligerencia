@@ -126,27 +126,43 @@
 	</aside>
 		<section class="aw-layout-content  js-content">
 
-
-<div class="page-header">
+				<div class="page-header">
+					<div class="container-fluid">
+						<h1>
+							Cadastro de Cliente
+						</h1>
+					</div>
+				</div>
+				
 	<div class="container-fluid">
-		<h1>
-			Cadastro de Cliente
-		</h1>
-	</div>
-</div>
-
-<div class="container-fluid">
-
-	<div class="alert  alert-danger  alert-dismissible" role="alert">
-		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-		<i class="fa  fa-exclamation-circle"></i> Já existe um Cliente com o nome informado.
-	</div>
-
+					<div class="alert  alert-danger  alert-dismissible" role="alert">
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<i class="fa  fa-exclamation-circle"></i> Já existe um Cliente com o nome informado.
+					</div>
 	<form method="get"  th:object="${cliente}" class="form-vertical  js-form-loading">
-	
-				<div class="row">
-												
-							<div class="col-xs-12 col-sm-2 form-group">
+		<div class="row">
+			<!-- sapn  -->
+				<div class="span6">
+						<ul  class="nav nav-tabs">
+								<li class="active"> 
+									<a href="#1a" data-toggle="tab">Dados Pessoais</a>
+								</li>
+								<li>
+									<a href="#2a" data-toggle="tab">Contatos</a>
+								</li>
+								<li>
+									<a href="#3a" data-toggle="tab">Endereço</a>
+								</li>
+					  	</ul>
+				 </div>
+		<!-- // -->	
+				<div class="tab-content clearfix">
+				
+				<!-- Pane Dados Pessoais -->
+					<div class="tab-pane active" id="1a">
+					
+						<br/>			
+						<div class="col-xs-12 col-sm-2 form-group">
 	                              <div class="input-group">
 	                              <span class="input-group-addon"><i class="glyphicon glyphicon-duplicate"></i></span>
 	                              <input id="fullName" name="Nome Paciente" placeholder="Nº Prontuário" class="form-control" required="true" value="" type="text">
@@ -166,17 +182,12 @@
 	                              <input id="fullName" name="Nome Paciente" placeholder="Hora Cadastro." class="form-control" required="true" value="" type="text">
 	                              </div>
                             </div>
-					</div>
-					
-			<div class="row">
-							<div class="col-xs- 12 col-sm-8 form-group">
+                            		<div class="col-xs- 12 col-sm-8 form-group">
                               <div class="input-group">
                               <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                               <input id="fullName" name="Nome Paciente" placeholder="Nome Paciente" class="form-control" required="true" value="" type="text">
                               </div>
                             </div>
-							
-									
 							<div class="col-xs-6 col-sm-2 form-group">
 	                              <div class="input-group">
 	                              <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
@@ -217,95 +228,140 @@
 							  <input name="nmMae" placeholder="Nome do Pai" class="form-control" type="text">
 							    </div>
 							 </div>
-							 
-							   <div class="col-xs-12 col-sm-6 form-group">
-							    <div class="input-group">
-							        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-							  <input name="address" placeholder="E-mail" class="form-control" type="text">
-							    </div>
-							 </div>
-							   <div class="col-xs-12 col-sm-3 form-group">
-							   <div class="input-group">
-							        <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
-							  <input name="address" placeholder="Celular" class="form-control" type="text">
-							   </div>
-							 </div>
-							   <div class="col-xs-12 col-sm-3 form-group">
-							   <div class="input-group">
-							        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-							  <input name="address" placeholder="Telefone" class="form-control" type="text">
-							   </div>
-							 </div>
-						    <div class="col-xs-12 col-sm-6 form-group">
-							    <div class="input-group">
-							        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-							  <input name="address" placeholder="Endereço" class="form-control" type="text">
-							    </div>
-							 </div>
-							 
-							 <div class="col-xs-12 col-sm-2 form-group">
-							    <div class="input-group">
-							        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-							  		<input name="bairro" placeholder="Número" class="form-control"  type="text">
-							    </div>
-							  </div>
-							  
-							   <div class="col-xs-12 col-sm-4 form-group">
-							    <div class="input-group">
-							        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-							  		<input name="bairro" placeholder="Complemento" class="form-control"  type="text">
-							    </div>
-							  </div>
-																	
-							<div class="col-xs-12 col-sm-6 form-group">
-							    <div class="input-group">
-							        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-							  		<input name="bairro" placeholder="Bairro" class="form-control"  type="text">
-							    </div>
-							  </div>	
-							
-							<div class="col-xs-6 col-sm-2 form-group">
-							    <div class="input-group">
-							        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-							  		<input name="zip" placeholder="00000-000" data-inputmask-inputformat="00000-000" class="form-control"  type="text">
-							    </div>
-							</div>
-										
-							 <div class="col-xs-12 col-sm-2 form-group">
-							    <div class="input-group">
-							        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-							  		<input name="city" placeholder="Cidade" class="form-control"  type="text">
-							    </div>
-							 </div>
-						  <div class="col-xs-12 col-sm-2 form-group">
-						    <div class="input-group">
-						        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-						  		<input name="city" placeholder="Estado" class="form-control"  type="text">
-						    </div>
-					  </div>
-					  
-					  <div class="col-xs-12 col-sm-12 form-group">
-						<div class="input-group">
-							<span class="input-group-addon"><i class="glyphicon glyphicon-align-left"></i></span>
-							<textarea class="message form-control" placeholder="Descrição" cols="35" name="message" rows="8"></textarea>
+					     </div>
+                  <!-- // -->
+                    <!-- Panel Contato -->
+                       	<div class="tab-pane" id="2a">
+                       	
+					         <br/>			 
+								   <div class="col-xs-12 col-sm-6 form-group">
+								     <div class="input-group">
+								        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+								  		<input name="address" placeholder="E-mail" class="form-control" type="text">
+								     </div>
+								   </div>
+									<div class="col-xs-12 col-sm-3 form-group">
+									   	<div class="input-group">
+									        <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
+									  		<input name="address" placeholder="Celular" class="form-control" type="text">
+									   	</div>
+									 </div>
+									<div class="col-xs-12 col-sm-3 form-group">
+									   <div class="input-group">
+									        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+											<input name="address" placeholder="Telefone" class="form-control" type="text">
+									   </div>
+								 	</div>
 						</div>
-				</div>
-		</div>		
+						                  	<div class="tab-pane" id="3a">
+                       	
+					         <br/>	
+					              <div class="col-xs-12 col-sm-6 form-group">
+								  	 <div class="input-group">
+								        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+								  		<input name="address" placeholder="Endereço" class="form-control" type="text">
+								     </div>
+								 </div>
+								  	<div class="col-xs-12 col-sm-2 form-group">
+									    <div class="input-group">
+									        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+									  		<input name="bairro" placeholder="Número" class="form-control"  type="text">
+									    </div>
+				  					</div>
+				 		 			
+				 		 			<div class="col-xs-12 col-sm-4 form-group">
+								      <div class="input-group">
+								        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+								  		<input name="bairro" placeholder="Complemento" class="form-control"  type="text">
+								      </div>
+				 					 </div>
+				 					
+				 					 <div class="col-xs-12 col-sm-6 form-group">
+									    <div class="input-group">
+									        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+									  		<input name="bairro" placeholder="Bairro" class="form-control"  type="text">
+									    </div>
+									 </div>	
+								 	
+								 	<div class="col-xs-6 col-sm-2 form-group">
+									    <div class="input-group">
+									        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+									  		<input name="zip" placeholder="00000-000" data-inputmask-inputformat="00000-000" class="form-control"  type="text">
+									    </div>
+									</div>
+							
+									<div class="col-xs-12 col-sm-3 form-group">
+									   <div class="input-group">
+									        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+											<input name="address" placeholder="Telefone" class="form-control" type="text">
+									   </div>
+								 	</div>
+								 			
+				 					 <div class="col-xs-12 col-sm-6 form-group">
+									    <div class="input-group">
+									        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+									  		<input name="bairro" placeholder="Bairro" class="form-control"  type="text">
+									    </div>
+									 </div>	
+								 	
+								 	<div class="col-xs-6 col-sm-2 form-group">
+									    <div class="input-group">
+									        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+									  		<input name="zip" placeholder="00000-000" data-inputmask-inputformat="00000-000" class="form-control"  type="text">
+									    </div>
+									</div>
+							
+									<div class="col-xs-12 col-sm-3 form-group">
+									   <div class="input-group">
+									        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+											<input name="address" placeholder="Telefone" class="form-control" type="text">
+									   </div>
+								 	</div>
+						</div>
+					<!-- // -->
+			<!-- 		
+					Inicio Panel Endereco
+		     <div class="tab-pane" id="3a">
+		     
+		    
 				
-			<div class="form-group">
-				  <button class="btn  btn-primary" type="submit">Salvar</button>
-				  <a href="pesquisa-produtos.html" class="btn  btn-default">Cancelar</a>
+				<div class="col-xs-6 col-sm-2 form-group">
+				    <div class="input-group">
+				        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+				  		<input name="zip" placeholder="00000-000" data-inputmask-inputformat="00000-000" class="form-control"  type="text">
+				    </div>
+				</div>
+							
+				 <div class="col-xs-12 col-sm-2 form-group">
+				    <div class="input-group">
+				        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+				  		<input name="city" placeholder="Cidade" class="form-control"  type="text">
+				    </div>
+				 </div>
+			  
+				  <div class="col-xs-12 col-sm-2 form-group">
+				     <div class="input-group">
+				        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+				  		<input name="city" placeholder="Estado" class="form-control"  type="text">
+				      </div>
+				  </div>
+		 </div>
+	//	 -->
 			</div>
-		</form>
-	</div>
-</section>
-
-	<footer class="aw-layout-footer  js-content">
-		<div class="container-fluid">
-			<span class="aw-footer-disclaimer">&copy; 2018 NEW CODY. Todos os direitos reservados.</span>
 		</div>
-	</footer>
+		</form>
+    	</div>	 
+   </div>
+</section>
+		<footer class="aw-layout-footer navbar-fixed-bottom h-0 js-content">
+			<div class="container-fluid">
+				<div class="form-group">
+			<button class="btn  btn-primary" type="submit">Salvar</button>
+			<a href="pesquisa-produtos.html" class="btn  btn-default">Cancelar</a>
+			</div>
+			</div>
+		</footer>
 	<script src="/gerenciador/layout/javascripts/vendors.min.js"></script>
 	<script src="/gerenciador/layout/javascripts/algaworks.min.js"></script>
-</body>
+</body >
 </html>

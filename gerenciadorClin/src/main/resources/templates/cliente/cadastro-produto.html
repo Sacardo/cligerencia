@@ -195,27 +195,7 @@
 
 	</form>
 </div>
-
-<script>
-function excluir() {
-	swal({
-		title: "Tem certeza?",
-		text: "Você não poderá recuperar o produto após a exclusão.",
-		type: "warning",
-		showCancelButton: true,
-		confirmButtonColor: "#DD6B55",
-		confirmButtonText: "Sim, exclua agora!",
-		closeOnConfirm: false,
-		showLoaderOnConfirm: true
-	}, function() {
-		setTimeout(function() {
-			swal("Excluído!", "O produto foi excluído com sucesso.", "success");
-		}, 2000);
-	});
-}
-</script>
-
-	</section>
+</section>
 	
 	<footer class="aw-layout-footer  js-content">
 		<div class="container-fluid">
@@ -225,18 +205,6 @@ function excluir() {
 
 </div>
 
-<div class="aw-search-modal  js-search-modal">
-	<form action="#" class="aw-search-modal__form">
-		<input class="aw-search-modal__input  js-search-modal-input" type="text" placeholder="O que você está procurando?"/>
-		<div class="aw-search-modal__input-icon">
-			<i class="glyphicon  glyphicon-search  js-search-modal-go"></i>
-		</div>
-	</form>
-	
-	<div class="aw-search-modal__controls">
-		<i class="glyphicon glyphicon-remove  js-search-modal-close"></i>
-	</div>
-</div>
 
 <script src="/gerenciador/layout/javascripts/vendors.min.js"></script>
 <script src="/gerenciador/layout/javascripts/algaworks.min.js"></script>
