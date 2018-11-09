@@ -19,19 +19,33 @@
 		<failOnMissingWebXml>false</failOnMissingWebXml>
 
 		<maven-compiler-pluging.version>3.8.0</maven-compiler-pluging.version>
+		
 		<spring-framework-version>5.1.1.RELEASE</spring-framework-version>
+		
 		<servelet.version>3.1.0</servelet.version>
+		
 		<thymeleaf.version>3.0.10.RELEASE</thymeleaf.version>
+		
 		<hibernate-validator.version>6.0.13.Final</hibernate-validator.version>
+		
+		<thymeleaf-layout-dialect.version>2.3.0 </thymeleaf-layout-dialect.version>
+		
 		<log4j.version>2.11.1</log4j.version>
+		
 		<jcl-over-slf4j.version>1.7.25</jcl-over-slf4j.version>
+		
 		<flyway-maven-plugin.version>4.0.2</flyway-maven-plugin.version>
+		
 		<!-- JPA / Hibernate -->
         <hibernate.version>5.3.7.Final</hibernate.version>
+        
         <mysql-connector-java.version>8.0.13</mysql-connector-java.version>
+        
         <!-- Spring Data JPA -->
 		<spring-data-jpa.version>2.1.2.RELEASE</spring-data-jpa.version>
+		
 		<java.versioin>1.8</java.versioin>
+		
 	</properties>
 	<build>
 		<plugins>
@@ -156,5 +170,24 @@
 		<artifactId>spring-data-jpa</artifactId>
 		<version>${spring-data-jpa.version}</version>
 	</dependency>
+	
+	  <!-- Thymeleaf - Layout Dialect -->
+		<dependency>
+    		<groupId>nz.net.ultraq.thymeleaf</groupId>
+    		<artifactId>thymeleaf-layout-dialect</artifactId>
+    		<version>${thymeleaf-layout-dialect.version}</version>
+		</dependency>
+	
 	</dependencies>
+	
+	<repositories>
+    <repository>
+      <id>sonatype-nexus-snapshots</id>
+      <name>Sonatype Nexus Snapshots</name>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+      </repository>
+      </repositories>
 </project>
