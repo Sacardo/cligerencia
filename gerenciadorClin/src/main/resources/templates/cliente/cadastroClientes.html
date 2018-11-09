@@ -37,9 +37,7 @@
 	    </div>
 
 	    <ul class="nav navbar-nav  navbar-right">
-	  	      
-	    
-	                            
+
 	      <li class="dropdown">
 	        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 	          <i class="fa  fa-user"></i>
@@ -126,7 +124,7 @@
 	</aside>
 		<section class="aw-layout-content  js-content">
 
-				<div class="page-header">
+				<div class="page-header top-fix">
 					<div class="container-fluid">
 						<h1>
 							Cadastro de Cliente
@@ -136,23 +134,25 @@
 				
 	<div class="container-fluid">
 					<div class="alert  alert-danger  alert-dismissible" role="alert">
-						<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">&times;</span></button>
 						<i class="fa  fa-exclamation-circle"></i> Já existe um Cliente com o nome informado.
 					</div>
 	<form method="get"  th:object="${cliente}" class="form-vertical  js-form-loading">
 		<div class="row">
 			<!-- sapn  -->
-				<div class="span6">
+<!-- 				<div class="span6"> -->
 						<ul  class="nav nav-tabs">
 								<li class="active"> 
 									<a href="#1a" data-toggle="tab">Dados Pessoais</a>
 								</li>
+									</li>
 								<li>
 									<a href="#2a" data-toggle="tab">Contatos</a>
 								</li>
 								<li>
 									<a href="#3a" data-toggle="tab">Endereço</a>
-								</li>
+							
 					  	</ul>
 				 </div>
 		<!-- // -->	
@@ -349,18 +349,18 @@
 	//	 -->
 			</div>
 		</div>
+		
+		
 		</form>
-    	</div>	 
-   </div>
+  </div> 
+   
+   		<div class="col-xs-12 col-sm-2 col-sm-offset-10 form-group ">
+			<button class="btn  btn-primary " type="submit">Salvar</button>
+			<button class="btn  btn-default" type="submit">Cancelar</button>
+		</div>	
+   
 </section>
-		<footer class="aw-layout-footer navbar-fixed-bottom h-0 js-content">
-			<div class="container-fluid">
-				<div class="form-group">
-			<button class="btn  btn-primary" type="submit">Salvar</button>
-			<a href="pesquisa-produtos.html" class="btn  btn-default">Cancelar</a>
-			</div>
-			</div>
-		</footer>
+
 	<script src="/gerenciador/layout/javascripts/vendors.min.js"></script>
 	<script src="/gerenciador/layout/javascripts/algaworks.min.js"></script>
 </body >
