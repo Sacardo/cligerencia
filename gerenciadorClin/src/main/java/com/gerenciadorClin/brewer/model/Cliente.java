@@ -1,5 +1,7 @@
 package com.gerenciadorClin.brewer.model;
 
+import java.sql.Timestamp;
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -35,13 +37,65 @@ public class Cliente {
 	
 	@NotBlank(message ="É obrigatório Nome do Pai")
 	private String nomPai;
+	
+	private Date dataCadastro;
+	
+	private Date dataNascimento;
+	
+	private Timestamp horaCadastro;
+	
+	private int idade;
 
 	@ManyToOne
 	@JoinColumn(name ="id_endereco")
 	private Endereco endereco;
 	
+	@ManyToOne
+	@JoinColumn(name ="id_contato")
+	private Contato contato;
+	
 	public String getNomMae() {
 		return nomMae;
+	}
+	
+	public Date getDataCadastro() {
+		return dataCadastro;
+	}
+
+	public void setDataCadastro(Date dataCadastro) {
+		this.dataCadastro = dataCadastro;
+	}
+
+	public Date getDataNascimento() {
+		return dataNascimento;
+	}
+
+	public void setDataNascimento(Date dataNascimento) {
+		this.dataNascimento = dataNascimento;
+	}
+
+	public Timestamp getHoraCadastro() {
+		return horaCadastro;
+	}
+
+	public void setHoraCadastro(Timestamp horaCadastro) {
+		this.horaCadastro = horaCadastro;
+	}
+
+	public int getIdade() {
+		return idade;
+	}
+
+	public void setIdade(int idade) {
+		this.idade = idade;
+	}
+
+	public Contato getContato() {
+		return contato;
+	}
+
+	public void setContato(Contato contato) {
+		this.contato = contato;
 	}
 
 	public void setNomMae(String nomMae) {

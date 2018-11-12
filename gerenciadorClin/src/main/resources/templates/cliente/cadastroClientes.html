@@ -23,8 +23,6 @@ layout:decorator="'layout/LayoutPadrao'">
 					</div>
 	<form method="get"  th:object="${cliente}" class="form-vertical  js-form-loading">
 		<div class="row">
-			<!-- sapn  -->
-<!-- 				<div class="span6"> -->
 						<ul  class="nav nav-tabs">
 								<li class="active"> 
 									<a href="#1a" data-toggle="tab">Dados Pessoais</a>
@@ -37,64 +35,63 @@ layout:decorator="'layout/LayoutPadrao'">
 									<a href="#3a" data-toggle="tab">Endereço</a>
 							
 					  	</ul>
-				 </div>
-		<!-- // -->	
+		</div>
+
 				<div class="tab-content clearfix">
-				
-				<!-- Pane Dados Pessoais -->
+
 					<div class="tab-pane active" id="1a">
 					
 						<br/>			
 						<div class="col-xs-12 col-sm-2 form-group">
-	                              <div class="input-group">
-	                              <span class="input-group-addon"><i class="glyphicon glyphicon-duplicate"></i></span>
-	                              <input id="fullName" name="Nome Paciente" placeholder="Nº Prontuário" class="form-control" required="true" value="" type="text">
-	                              </div>
-                            </div>
-							
-							<div class="col-xs-6 col-sm-2 form-group">
-	                              <div class="input-group">
-	                              <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-	                              <input id="fullName" name="Nome Paciente" class="form-control"  data-mask="00/00/0000" required="true" value="" type="text">
-	                              </div>
-                            </div>
-							
-							<div class="col-xs-6 col-sm-2 form-group">
-	                              <div class="input-group">
-	                              <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-	                              <input id="fullName" name="Nome Paciente" placeholder="Hora Cadastro." class="form-control" required="true" value="" type="text">
-	                              </div>
-                            </div>
-                            		<div class="col-xs- 12 col-sm-8 form-group">
                               <div class="input-group">
-                              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                              <input id="fullName" name="Nome Paciente" placeholder="Nome Paciente" class="form-control" required="true" value="" type="text">
+                             	 <span class="input-group-addon"><i class="glyphicon glyphicon-duplicate"></i></span>
+                              	<input id="numProntuario" name="numProntuário" placeholder="Nº Prontuário" class="form-control" required="true" type="text">
                               </div>
                             </div>
+							
+							<div class="col-xs-6 col-sm-2 form-group">
+                              <div class="input-group">
+                             	 <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                              	<input id="dataCadatro" name="dataCadastro" class="form-control"  placeholder="Data. Cad." data-mask="00/00/0000" required="true" type="text">
+                              </div>
+                            </div>
+							
+							<div class="col-xs-6 col-sm-2 form-group">
+                              <div class="input-group">
+                              	<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                              	<input id="horaCadastro" name="horaCadastro" placeholder="Hora. Cad." data-mask="00:00:00" class="form-control" required="true" type="text">
+                              </div>
+                            </div>
+	                            <div class="col-xs- 12 col-sm-8 form-group">
+	                              <div class="input-group">
+	                              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+	                              <input id="fullName" name="Nome Paciente" placeholder="Nome Paciente" class="form-control" required="true" value="" type="text">
+	                              </div>
+	                            </div>
 							<div class="col-xs-6 col-sm-2 form-group">
 	                              <div class="input-group">
-	                              <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-	                              <input id="fullName" name="Nome Paciente" placeholder="Data Nasc." class="form-control" required="true" value="" type="text">
+	                              	<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+	                              	<input id="dtNasc." name="dtNasc" placeholder="Data Nasc." class="form-control" data-mask="00/00/0000"  required="true" type="text">
 	                              </div>
                             </div>
                             <div class="col-xs-6 col-sm-2 form-group">
-	                              <div class="input-group">
-	                              <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-	                              <input id="fullName" name="Nome Paciente" placeholder="Idade" class="form-control" required="true" value="" type="text">
-	                              </div>
+                              <div class="input-group">
+                              	<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                              	<input id="idade" name="idade" placeholder="Idade" class="form-control" data-mask="00" required="true" type="text">
+                              </div>
                             </div>
 						
 							<div class="col-xs- 12 col-sm-6 form-group">
-	                              <div class="input-group">
-	                              <span class="input-group-addon"><i class="glyphicon glyphicon-credit-card"></i></span>
-	                              <input id="fullName" name="Nome Paciente" placeholder="CPF" class="form-control" required="true" value="" type="text">
-	                              </div>
+                              <div class="input-group">
+                           	   	<span class="input-group-addon"><i class="glyphicon glyphicon-credit-card"></i></span>
+                            	<input id="cpf" name="Nome Paciente"  class="form-control" maxlength="14" required="true" value="" type="text">
+                              </div>
                             </div>
                             
                             <div class="col-xs- 12 col-sm-6 form-group">
                               <div class="input-group">
-                              <span class="input-group-addon"><i class="glyphicon glyphicon-credit-card"></i></span>
-                              <input id="fullName" name="Nome Paciente" placeholder="RG" class="form-control" required="true" value="" type="text">
+                            	<span class="input-group-addon"><i class="glyphicon glyphicon-credit-card"></i></span>
+                              	<input id="fullName" name="Nome Paciente" placeholder="RG" class="form-control" required="true" value="" type="text">
                               </div>
                             </div>
 							
@@ -104,20 +101,54 @@ layout:decorator="'layout/LayoutPadrao'">
 							  <input name="nmMae" placeholder="Nome da Mãe" class="form-control" type="text">
 							    </div>
 							 </div>
-							 
 							 	<div class="col-xs-12 col-sm-6 form-group">
-							    <div class="input-group">
-							        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-							  <input name="nmMae" placeholder="Nome do Pai" class="form-control" type="text">
+							   	 <div class="input-group">
+							     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+							  	 <input name="nmMae" placeholder="Nome do Pai" class="form-control" type="text">
 							    </div>
 							 </div>
 					     </div>
-                  <!-- // -->
-                    <!-- Panel Contato -->
+
                        	<div class="tab-pane" id="2a">
                        	
 					         <br/>			 
 								   <div class="col-xs-12 col-sm-6 form-group">
+								     <div class="input-group">
+								        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+								  		<input name="address" placeholder="E-mail" class="form-control" type="text">
+								     </div>
+								   </div>
+									<div class="col-xs-12 col-sm-3 form-group">
+									   	<div class="input-group">
+									        <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
+									  		<input name="address" placeholder="Celular" class="form-control" type="text">
+									   	</div>
+									 </div>
+									<div class="col-xs-12 col-sm-3 form-group">
+									   <div class="input-group">
+									        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+											<input name="address" placeholder="Telefone" class="form-control" type="text">
+									   </div>
+								 	</div>
+								 	   <div class="col-xs-12 col-sm-6 form-group">
+								     <div class="input-group">
+								        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+								  		<input name="address" placeholder="E-mail" class="form-control" type="text">
+								     </div>
+								   </div>
+									<div class="col-xs-12 col-sm-3 form-group">
+									   	<div class="input-group">
+									        <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
+									  		<input name="address" placeholder="Celular" class="form-control" type="text">
+									   	</div>
+									 </div>
+									<div class="col-xs-12 col-sm-3 form-group">
+									   <div class="input-group">
+									        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+											<input name="address" placeholder="Telefone" class="form-control" type="text">
+									   </div>
+								 	</div>
+								 	   <div class="col-xs-12 col-sm-6 form-group">
 								     <div class="input-group">
 								        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
 								  		<input name="address" placeholder="E-mail" class="form-control" type="text">
@@ -188,11 +219,12 @@ layout:decorator="'layout/LayoutPadrao'">
 				  </div>
 						</div>
 			</div>
-		</div>
+		
 		<div class="col-xs-12 col-sm-2 col-sm-offset-10 form-group ">
-			<button class="btn  btn-primary " type="submit">Salvar</button>
-			<button class="btn  btn-default" type="submit">Cancelar</button>
-			</div>	
+			<button class="btn  btn-success " type="submit">Salvar</button>
+			<button class="btn  btn-primary " type="submit">Cancelar</button>
+			</div>
+		</div>
 		</form>
 	</div>
 </section>

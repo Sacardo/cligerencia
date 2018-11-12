@@ -20,9 +20,13 @@ public class Endereco implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY )
 	private Long idEndereco;
 	
-	private String rua;
+	private String logradouro;
 	private String bairro;
 	private int numero;
+	private String complemento;
+	private String CEP;
+	private String cidade;
+	private String UF;
 	
 	@OneToMany(mappedBy ="endereco")
 	private List<Cliente> cliente;
@@ -33,15 +37,13 @@ public class Endereco implements Serializable {
 	public void setIdEndereco(Long idEndereco) {
 		this.idEndereco = idEndereco;
 	}
-	
-	public String getRua() {
-		return rua;
-	}
 
-	public void setRua(String rua) {
-		this.rua = rua;
+	public String getLogradouro() {
+		return logradouro;
 	}
-	
+	public void setLogradouro(String logradouro) {
+		this.logradouro = logradouro;
+	}
 	public String getBairro() {
 		return bairro;
 	}
@@ -57,6 +59,32 @@ public class Endereco implements Serializable {
 	public void setNumero(int numero) {
 		this.numero = numero;
 	}
+	
+	public String getComplemento() {
+		return complemento;
+	}
+	public void setComplemento(String complemento) {
+		this.complemento = complemento;
+	}
+	public String getCEP() {
+		return CEP;
+	}
+	public void setCEP(String cEP) {
+		CEP = cEP;
+	}
+	public String getCidade() {
+		return cidade;
+	}
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
+	}
+	public String getUF() {
+		return UF;
+	}
+	public void setUF(String uF) {
+		UF = uF;
+	}
+
 	
 	@Override
 	public int hashCode() {

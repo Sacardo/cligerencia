@@ -19,7 +19,7 @@ public class ClientesController {
 	
 	@RequestMapping("/clientes/pesquisar")	
 	public String pesquisar(Cliente cliente) {
-		return "cliente/pesquisaClientes2";
+		return "cliente/pesquisarClientes";
 	}
 	
 	@RequestMapping("/clientes/novo")	
