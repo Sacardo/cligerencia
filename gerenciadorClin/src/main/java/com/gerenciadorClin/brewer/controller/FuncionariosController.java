@@ -16,7 +16,7 @@ public class FuncionariosController {
 
 	@RequestMapping("/funcionario/novo")
 	public String novo(Funcionario funcionario) {
-		return "funcionario/cadastroFuncionarios";
+		return "funcionario/cadastroFuncionario";
 	}
 	
 	@RequestMapping(value = "/funcionarios/novo", method = RequestMethod.POST)
