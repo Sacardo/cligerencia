@@ -1,8 +1,12 @@
 package com.gerenciadorClin.brewer.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
+@Entity
+@Table(name = "funcionario")
 public class Funcionario {
 	
 private String idcliente;
