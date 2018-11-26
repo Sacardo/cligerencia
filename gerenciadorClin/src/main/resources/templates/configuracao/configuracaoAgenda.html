@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorator="'layout/LayoutPadrao'">
+<head></head>
+<body>
+		<section class="aw-layout-content  js-content" layout:fragment="conteudo">
+
+				<div class="page-header top-fix">
+					<div class="container-fluid">
+						<h1>
+							Configuração Agenda
+						</h1>
+					</div>
+				</div>
+				
+	<div class="container-fluid">
+					<div class="alert  alert-danger  alert-dismissible" role="alert">
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">&times;</span></button>
+						<i class="fa  fa-exclamation-circle"></i> Já existe um Cliente com o nome informado.
+					</div>
+	<form data-toggle="validator" method="get"  th:object="${cliente}" class="form-vertical  js-form-loading">
+		<div class="row">
+		   				<ul  class="nav nav-tabs">
+								<li class="active"> 
+									<a href="#1a" data-toggle="tab">Segunda-Feira</a>
+								</li>
+								<li>
+									<a href="#2a" data-toggle="tab">Terça-Feira</a>
+								</li>
+								<li>
+									<a href="#3a" data-toggle="tab">Quarta-Feira</a>
+								</li>
+								<li>
+									<a href="#4a" data-toggle="tab">Quinta-Feira</a>
+								</li>
+								<li>
+									<a href="#5a" data-toggle="tab">Sexta-Feira</a>
+								</li>
+								<li>
+									<a href="#6a" data-toggle="tab">Sábado</a>
+								</li>
+							</li>
+					  	</ul>
+				</div>
+				<div class="tab-content clearfix">
+
+				<div class="tab-pane active" id="1a">
+					<br/>		
+					<div th:replace="layout/fragmentos/tabela:: tabelaHorario"></div>	
+				</div>
+                 <div class="tab-pane" id="2a">
+		        		 <br/>			 
+						<div th:replace="layout/fragmentos/tabela:: tabelaHorario"></div>						  
+				</div>
+			                  	<div class="tab-pane" id="3a">
+                    	
+		         <br/>	
+		              <div class="col-xs-12 col-sm-6 form-group">
+					  	 <div class="input-group">
+					        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+					  		<input name="address" placeholder="Endereço" class="form-control" type="text">
+					     </div>
+					 </div>
+					  	<div class="col-xs-12 col-sm-2 form-group">
+						    <div class="input-group">
+						        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+						  		<input name="bairro" placeholder="Número" class="form-control"  type="text">
+						    </div>
+	  					</div>
+	 		 			
+	 		 			<div class="col-xs-12 col-sm-4 form-group">
+					      <div class="input-group">
+					        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+					  		<input name="bairro" placeholder="Complemento" class="form-control"  type="text">
+					      </div>
+	 					 </div>
+	 					
+	 					 <div class="col-xs-12 col-sm-6 form-group">
+						    <div class="input-group">
+						        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+						  		<input name="bairro" placeholder="Bairro" class="form-control"  type="text">
+						  	</div>
+						 </div>	
+					 	
+					 	<div class="col-xs-6 col-sm-2 form-group">
+						    <div class="input-group">
+						        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+						  		<input name="zip" placeholder="CEP" data-mask="00000-000" class="form-control"  type="text">
+						    </div>
+						</div>
+						
+									 <div class="col-xs-12 col-sm-2 form-group">
+				    <div class="input-group">
+				        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+				  		<input name="city" placeholder="Cidade" class="form-control"  type="text">
+				    </div>
+				 </div>
+			  
+				  <div class="col-xs-12 col-sm-2 form-group">
+				     <div class="input-group">
+				        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+				  		<input name="city" placeholder="Estado" class="form-control"  type="text">
+				      </div>
+				  </div>
+						</div>
+			</div>
+		
+		<div class="col-xs-12 col-sm-2 col-sm-offset-10 form-group ">
+			<button class="btn  btn-primary " type="submit">Salvar</button>
+			<button class="btn  btn-primary " type="submit">Cancelar</button>
+			</div>
+		</div>
+		</form>
+	</div>
+</section>
+</body>
+</html>
