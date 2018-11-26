@@ -15,7 +15,7 @@ public class ConfiguracaoController {
 	
 	@RequestMapping("/configuracao/novo")	
 	public String novo(Agenda agenda) {
-		return "configuracao/configuracaoAgenda";
+		return "configuracao/configuracao";
 	}
 	
 /*	@RequestMapping(value = "/agenda/agendaClientes", method = RequestMethod.POST)
@@ -27,9 +27,9 @@ public class ConfiguracaoController {
 		return "redirect:/agenda/agendaClientes";
 	}*/
 	
-	@RequestMapping("/configuracao/ConfiguracaoAgenda")
+	@RequestMapping("/configuracao/Configuracao")
 	public String cadastro(){
-		return "configuracao/configuracaoAgenda";
+		return "configuracao/configuracao";
 	}
 
 }

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt" xmlns="http://www.w3.org/1999/xhtml"
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorator="'layout/LayoutPadrao'">
+<head>
+<title>Configurações</title>
+
+</head>
+<body>
+		<section class="aw-layout-content  js-content" layout:fragment="conteudo">
+
+				<div class="page-header top-fix">
+					<div class="container-fluid">
+						<h1>
+							Configurações
+						</h1>
+					</div>
+				</div>
+				
+			<div class="dropdown">
+			  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			    Dropdown button
+			  </button>
+			  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+			    <a class="dropdown-item" href="#">Action</a>
+			    <a class="dropdown-item" href="#">Another action</a>
+			    <a class="dropdown-item" href="#">Something else here</a>
+			  </div>
+			</div>
+							
+		<div class="container-fluid">
+		<div class="row col-sm-12">
+	       <div class="row col-sm-2">
+    	<label>Horas do Dia</label>
+       	<br>
+       <div class="col-xs-12 col-sm-12 form-group">
+       	<div class="dropdown">
+  		<button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+   		 Dropdown
+ 		</button>
+ 		 <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+   		 <button class="dropdown-item" type="button">Ação</button>
+   		 <button class="dropdown-item" type="button">Another Ação</button>
+   		 <button class="dropdown-item" type="button">Something else here</button>
+ 		</div>
+		</div>
+       </div>
+       <div class="col-xs-12 col-sm-12 form-group">
+		   <div class="btn-group">
+		    <button type="button" class="btn btn-secondary">Referência</button>
+		    <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" id="dropdownMenuReference" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-reference="parent">
+		      <span class="sr-only">Dropdown</span>
+		    </button>
+		    <div class="dropdown-menu" aria-labelledby="dropdownMenuReference">
+		      <a class="dropdown-item" href="#">Alguma ação</a>
+		      <a class="dropdown-item" href="#">Outra ação</a>
+		      <a class="dropdown-item" href="#">Alguma coisa aqui</a>
+		      <div class="dropdown-divider"></div>
+		      <a class="dropdown-item" href="#">Link separado</a>
+		    </div>
+		  </div>
+		</div>
+	   </div>
+
+    <div class="row col-sm-2">
+    	<label>Horas do Dia</label>
+       	<br>
+       <div class="col-xs-12 col-sm-12 form-group">
+       	<div class="input-group">
+       	<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+       	<input id="horaCadastro" name="horaCadastro" placeholder="Hora. Inicial" data-mask="00:00" class="form-control" required="true" type="text">
+       	</div>
+       </div>
+	 	<div class="col-xs-12 col-sm-12 form-group">
+	     <div class="input-group">
+	     <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+	   	 <input id="horaCadastro" name="horaCadastro" placeholder="Hora. Final" data-mask="00:00" class="form-control" required="true" type="text">
+	    </div>
+	   </div>
+	   <div class="col-xs-12 col-sm-12 form-group">
+       <div class="input-group">
+      	<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+      	<input id="horaCadastro" name="horaCadastro" placeholder="Intervalo" data-mask="00" class="form-control" required="true" type="text">
+       </div>
+      </div>
+   </div>
+     <div class="row col-sm-2">
+    	<label>Horas do Dia</label>
+       	<br>
+       <div class="col-xs-12 col-sm-12 form-group">
+       	<div class="input-group">
+       	<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+       	<input id="horaCadastro" name="horaCadastro" placeholder="Hora. Inicial" data-mask="00:00" class="form-control" required="true" type="text">
+       	</div>
+       </div>
+	 	<div class="col-xs-12 col-sm-12 form-group">
+	     <div class="input-group">
+	     <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+	   	 <input id="horaCadastro" name="horaCadastro" placeholder="Hora. Final" data-mask="00:00" class="form-control" required="true" type="text">
+	    </div>
+	   </div>
+	   <div class="col-xs-12 col-sm-12 form-group">
+       <div class="input-group">
+      	<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+      	<input id="horaCadastro" name="horaCadastro" placeholder="Intervalo" data-mask="00" class="form-control" required="true" type="text">
+       </div>
+      </div>
+   </div>
+ </div>
+	</div>	
+		<div>
+			<div class="col-xs-12 col-sm-2 col-sm-offset-10 form-group ">
+				<button class="btn  btn-primary " type="submit">Salvar</button>
+				<button class="btn  btn-primary " type="submit">Cancelar</button>
+				</div>
+			</div>
+		</form>
+</section>
+</body>
+</html>
