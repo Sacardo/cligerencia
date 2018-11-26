@@ -33,3 +33,18 @@ CREATE TABLE contato(
    celular VARCHAR(14) NOT NULL,
    telefone VARCHAR(14) NOT NULL,
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE estoque(
+   idproduto Long (20) NOT NULL,
+   nameProduto  VARCHAR(20)NOT NULL,
+   quantidadeProduto INT(15),
+   valorProduto DOUBLE(4,2),
+)ENGINE=InnoDB DEFAULT CHARSERT=utf8;
+
+CREATE TABLE agenda(
+ idAgenda Long,
+ data DATE,
+ diaSemana VARCHAR(10),
+ hora DATE,
+ FOREIGN KEY(id_cliente) REFERENCES cliente(idCliente)
+)ENGINE=InnoDB DEFAULT CHARSERT=utf8;
