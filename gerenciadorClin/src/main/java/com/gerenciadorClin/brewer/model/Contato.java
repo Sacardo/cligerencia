@@ -1,11 +1,13 @@
 package com.gerenciadorClin.brewer.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -23,6 +25,9 @@ private String email;
 private String telefone;
 
 private String celular;
+
+@OneToMany(mappedBy ="idContato")
+private List<Cliente> cliente;
 
 public long getIdContato() {
 	return idContato;
