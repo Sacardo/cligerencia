@@ -17,19 +17,16 @@ CREATE TABLE contato(
 
 CREATE TABLE cliente (
     idCliente BIGINT(20) PRIMARY KEY AUTO_INCREMENT,
-    numProntuario VARCHAR(50) NOT NULL,
+    numCliente VARCHAR(50) NOT NULL,
     nome VARCHAR(100) NOT NULL,
     nunCIC VARCHAR (12) NOT NULL,
     CPF VARCHAR (18) NOT NULL,
     nomMae VARCHAR (100) NOT NULL,
     nomPai VARCHAR (100) NOT NULL,
+    idade CHAR(2),
     dataCadastro DATE,
     horaCadastro DATE,
-    dataNascimento DATE,
-    id_endereco BIGINT(20) NOT NULL,
-    id_contato BIGINT (20) NOT NULL,
-    FOREIGN KEY (id_endereco) REFERENCES endereco(idEndereco),
-    FOREIGN KEY (id_contato) REFERENCES contato(idContato)
+    dataNascimento DATE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE estoque(

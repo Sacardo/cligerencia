@@ -2,15 +2,12 @@ package com.gerenciadorClin.brewer.model;
 
 import java.sql.Timestamp;
 import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "cliente")
@@ -20,44 +17,18 @@ public class Cliente {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idcliente;
 	
-	@NotBlank(message ="É obrigatório o Nome")
+
 	private String nome;
-	
-	@NotBlank(message ="É obrigatório Numero de Prontuario")
-	private String numProntuario;
-	
-	@NotNull(message ="É obrigatório  RG")
+	private String numCliente;
 	private String nunCIC;
-	
-	@NotNull(message ="É obrigatório CPF")
-	private String CPF;
-	
-	@NotBlank(message ="É obrigatório Nome da Mãe")
+	private String cpf;
 	private String nomMae;
-	
-	@NotBlank(message ="É obrigatório Nome do Pai")
 	private String nomPai;
-	
 	private Date dataCadastro;
-	
 	private Date dataNascimento;
-	
 	private Timestamp horaCadastro;
-	
 	private int idade;
 
-	@ManyToOne
-	@JoinColumn(name ="id_endereco")
-	private Endereco endereco;
-	
-	@ManyToOne
-	@JoinColumn(name ="id_contato")
-	private Contato contato;
-	
-	public String getNomMae() {
-		return nomMae;
-	}
-	
 	public Date getDataCadastro() {
 		return dataCadastro;
 	}
@@ -65,6 +36,8 @@ public class Cliente {
 	public void setDataCadastro(Date dataCadastro) {
 		this.dataCadastro = dataCadastro;
 	}
+
+
 
 	public Date getDataNascimento() {
 		return dataNascimento;
@@ -90,18 +63,14 @@ public class Cliente {
 		this.idade = idade;
 	}
 
-	public Contato getContato() {
-		return contato;
-	}
-
-	public void setContato(Contato contato) {
-		this.contato = contato;
+	public String getNomMae() {
+		return nomMae;
 	}
 
 	public void setNomMae(String nomMae) {
 		this.nomMae = nomMae;
 	}
-	
+
 	public String getNomPai() {
 		return nomPai;
 	}
@@ -109,13 +78,13 @@ public class Cliente {
 	public void setNomPai(String nomPai) {
 		this.nomPai = nomPai;
 	}
-
-	public String getCPF() {
-		return CPF;
+	
+	public String getCpf() {
+		return cpf;
 	}
 
-	public void setCPF(String cPF) {
-		CPF = cPF;
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
 	}
 
 	public String getNunCIC() {
@@ -126,12 +95,12 @@ public class Cliente {
 		this.nunCIC = nunCIC;
 	}
 
-	public String getNumProntuario() {
-		return numProntuario;
+	public String getNumCliente() {
+		return numCliente;
 	}
 
-	public void setNumProntuario(String numProntuario) {
-		this.numProntuario = numProntuario;
+	public void setNumCliente(String numCliente) {
+		this.numCliente = numCliente;
 	}
 	
 	public Long getIdcliente() {
@@ -150,14 +119,7 @@ public class Cliente {
 		this.nome = nome;
 	}
 	
-	public Endereco getEndereco() {
-		return endereco;
-	}
-
-	public void setEndereco(Endereco endereco) {
-		this.endereco = endereco;
-	}
-
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;

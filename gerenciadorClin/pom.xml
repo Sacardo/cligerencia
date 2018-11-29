@@ -34,12 +34,12 @@
 		
 		<jcl-over-slf4j.version>1.7.25</jcl-over-slf4j.version>
 		
-		<flyway-maven-plugin.version>4.0.2</flyway-maven-plugin.version>
+		<flyway-maven-plugin.version>5.2.3</flyway-maven-plugin.version>
 		
 		<!-- JPA / Hibernate -->
         <hibernate.version>5.3.7.Final</hibernate.version>
         
-        <mysql-connector-java.version>8.0.13</mysql-connector-java.version>
+        <mysql-connector-java.version>8.0.11</mysql-connector-java.version>
         
         <!-- Spring Data JPA -->
 		<spring-data-jpa.version>2.1.2.RELEASE</spring-data-jpa.version>
