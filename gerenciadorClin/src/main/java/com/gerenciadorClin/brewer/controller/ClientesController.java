@@ -30,12 +30,12 @@ public class ClientesController {
 	
 	@RequestMapping(value = "/clientes/novo", method = RequestMethod.POST)
 	public ModelAndView cadastrar(@Valid Cliente cliente, BindingResult result, Model model, RedirectAttributes attributes) {
-		/*if (result.hasErrors()) {
+		if (result.hasErrors()) {
 			return novo(cliente);
-		}*/
+		}
 		clienteService.salvar(cliente);
 		attributes.addFlashAttribute("mensagem","Cliente salvo com sucesso!");
-		return ModelAndView ("redirect:/clientes/novo");
+		return new ModelAndView ("redirect:/clientes/novo");
 	}
 	
 	private ModelAndView ModelAndView(String string) {

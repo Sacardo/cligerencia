@@ -16,13 +16,12 @@ layout:decorator="'layout/LayoutPadrao'">
 				</div>
 				
 	<div class="container-fluid">
-				<!-- 	<div class="alert  alert-danger  alert-dismissible" role="alert">
-						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-						<span aria-hidden="true">&times;</span></button>
-						<i class="fa  fa-exclamation-circle"></i> Já existe um Cliente com o nome informado.
-					</div> -->
-					
-	<form  method="POST" th:object="${cliente}" class="form-vertical  js-form-loading">
+	
+	<th:block th:include="fragments/mensagemSucesso"></th:block>
+			    
+	<form  data-toggle="validator" method="POST" th:object="${cliente}" class="form-vertical  js-form-loading">
+	
+	<th:block th:include="fragments/mensagensErroValidacao"></th:block>
 	
 		<div class="row">
 						<ul  class="nav nav-tabs">
@@ -54,17 +53,11 @@ layout:decorator="'layout/LayoutPadrao'">
 					<div class="col-xs-6 col-sm-2 form-group">
                          <div class="input-group">
                          	 <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-                          	<input id="dataCadastro" class="form-control" type="Date" th:field="*{dataCadastro}"/>
+                          	<input id="dataCadastro" class="form-control" type="text" />
                           </div>
                         </div>
 			
-					<div class="col-xs-6 col-sm-2 form-group">
-                          <div class="input-group">
-                          	<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-                          	<input id="horaCadastro" class="form-control" type="Date" th:field="*{horaCadastro}"/>
-                          </div>
-                        </div>
-                         <div class="col-xs- 12 col-sm-12 form-group">
+				      <div class="col-xs- 12 col-sm-12 form-group">
                            <div class="input-group">
                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                            <input id="nome" class="form-control"  type="text" th:field="*{nome}"/>
@@ -73,7 +66,7 @@ layout:decorator="'layout/LayoutPadrao'">
 					<div class="col-xs-6 col-sm-2 form-group">
                            <div class="input-group">
                            	<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-                           	<input id="dataNascimento"  class="form-control" type="text" th:field="*{dataNascimento}"/>
+                           	<input id="dataNascimento"  class="form-control" type="text" />
                            </div>
                         </div>
                         <div class="col-xs-6 col-sm-2 form-group">

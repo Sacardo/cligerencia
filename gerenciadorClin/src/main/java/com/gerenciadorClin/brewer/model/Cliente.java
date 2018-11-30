@@ -8,6 +8,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.TemporalType;
+import javax.validation.constraints.NotBlank;
+
+import org.springframework.data.jpa.repository.Temporal;
+import org.springframework.format.annotation.DateTimeFormat;
+
+
+
 
 @Entity
 @Table(name = "cliente")
@@ -17,16 +25,27 @@ public class Cliente {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idcliente;
 	
-
+	@NotBlank(message="Nome é obrigatório")
 	private String nome;
+
+
 	private String numCliente;
+	
 	private String nunCIC;
+	
+	
 	private String cpf;
+	
 	private String nomMae;
+	
 	private String nomPai;
+	
+	//@DateTimeFormat(pattern = "dd-MM-yyyy")
 	private Date dataCadastro;
-	private Date dataNascimento;
-	private Timestamp horaCadastro;
+	
+	//@DateTimeFormat(pattern = "dd-MM-yyyy")
+    private Date dataNascimento;
+	
 	private int idade;
 
 	public Date getDataCadastro() {
@@ -37,22 +56,12 @@ public class Cliente {
 		this.dataCadastro = dataCadastro;
 	}
 
-
-
 	public Date getDataNascimento() {
 		return dataNascimento;
 	}
 
 	public void setDataNascimento(Date dataNascimento) {
 		this.dataNascimento = dataNascimento;
-	}
-
-	public Timestamp getHoraCadastro() {
-		return horaCadastro;
-	}
-
-	public void setHoraCadastro(Timestamp horaCadastro) {
-		this.horaCadastro = horaCadastro;
 	}
 
 	public int getIdade() {

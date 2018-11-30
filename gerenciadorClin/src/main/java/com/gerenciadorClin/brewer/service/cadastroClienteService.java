@@ -1,5 +1,7 @@
 package com.gerenciadorClin.brewer.service;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +14,7 @@ public class cadastroClienteService {
 	@Autowired
 	private Clientes clientes;
 	
-
+	@Transactional
 	public void salvar(Cliente cliente){
 		clientes.save(cliente);
 	}

@@ -19,7 +19,8 @@ import com.gerenciadorClin.brewer.model.Cliente;
 import com.gerenciadorClin.brewer.repository.Clientes;
 
 @Configuration
-@EnableJpaRepositories(basePackageClasses = Clientes.class)
+@EnableJpaRepositories(basePackageClasses = Clientes.class, enableDefaultTransactions=false)
+@EnableTransactionManagement
 public class JPAConfig {
 	
 	@Bean
