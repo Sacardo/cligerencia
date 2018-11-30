@@ -17,8 +17,8 @@ import com.gerenciadorClin.brewer.service.cadastroClienteService;
 @Controller
 public class ClientesController {
 	
-	
-	@Autowired
+
+   @Autowired
    private cadastroClienteService clienteService; 
 	
 
@@ -30,12 +30,11 @@ public class ClientesController {
 	
 	@RequestMapping(value = "/clientes/novo", method = RequestMethod.POST)
 	public ModelAndView cadastrar(@Valid Cliente cliente, BindingResult result, Model model, RedirectAttributes attributes) {
-		if (result.hasErrors()) {
+		/*if (result.hasErrors()) {
 			return novo(cliente);
-		}
+		}*/
 		clienteService.salvar(cliente);
 		attributes.addFlashAttribute("mensagem","Cliente salvo com sucesso!");
-		System.out.println("Nome" + cliente.getNome());
 		return ModelAndView ("redirect:/clientes/novo");
 	}
 	

@@ -5,7 +5,7 @@ xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 layout:decorator="'layout/LayoutPadrao'">
 <head></head>
 <body>
-		<section class="aw-layout-content  js-content" layout:fragment="conteudo">
+		<section layout:fragment="conteudo">
 
 				<div class="page-header top-fix">
 					<div class="container-fluid">
@@ -22,19 +22,19 @@ layout:decorator="'layout/LayoutPadrao'">
 						<i class="fa  fa-exclamation-circle"></i> Já existe um Cliente com o nome informado.
 					</div> -->
 					
-	<form  method="POST"  th:object="${cliente}" class="form-vertical  js-form-loading">
+	<form  method="POST" th:object="${cliente}" class="form-vertical  js-form-loading">
 	
 		<div class="row">
 						<ul  class="nav nav-tabs">
 								<li class="active"> 
 									<a href="#1a" data-toggle="tab">Dados Pessoais</a>
 								</li>
-									</li>
 								<li>
 									<a href="#2a" data-toggle="tab">Contatos</a>
 								</li>
 								<li>
 									<a href="#3a" data-toggle="tab">Endereço</a>
+								</li>
 							
 					  	</ul>
 		</div>
@@ -47,39 +47,39 @@ layout:decorator="'layout/LayoutPadrao'">
 					<div class="col-xs-12 col-sm-2 form-group">
                           <div class="input-group">
                          	 <span class="input-group-addon"><i class="fas fa-file-contract "></i></span>
-                          	<input id="numCliente" name="numCliente" placeholder="Nº Cliente" class="form-control" required="true" type="text" th:field="*{numCliente}">
+                          	<input id="numCliente" class="form-control" type="text" th:field="*{numCliente}"/>
                           </div>
                         </div>
 			
 					<div class="col-xs-6 col-sm-2 form-group">
                          <div class="input-group">
                          	 <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-                          	<input id="dataCadastro" name="dataCadastro" class="form-control"  placeholder="Data. Cad." data-mask="00/00/0000" required="true" type="text" th:field="*{dataCadastro}">
+                          	<input id="dataCadastro" class="form-control" type="Date" th:field="*{dataCadastro}"/>
                           </div>
                         </div>
 			
 					<div class="col-xs-6 col-sm-2 form-group">
                           <div class="input-group">
                           	<span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
-                          	<input id="horaCadastro" name="horaCadastro" placeholder="Hora. Cad." data-mask="00:00:00" class="form-control" required="true" type="text" th:field="*{horaCadastro}">
+                          	<input id="horaCadastro" class="form-control" type="Date" th:field="*{horaCadastro}"/>
                           </div>
                         </div>
                          <div class="col-xs- 12 col-sm-12 form-group">
                            <div class="input-group">
                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                           <input id="nome" name="Nome Paciente" placeholder="Nome Cliente" class="form-control" required="true" value="" type="text" th:field="*{nome}">
+                           <input id="nome" class="form-control"  type="text" th:field="*{nome}"/>
                          </div>
                          </div>
 					<div class="col-xs-6 col-sm-2 form-group">
                            <div class="input-group">
                            	<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-                           	<input id="dataNascimento." name="dtNasc" placeholder="Data Nasc." class="form-control" data-mask="00/00/0000"  required="true" type="text" th:field="*{dataNascimento}">
+                           	<input id="dataNascimento"  class="form-control" type="text" th:field="*{dataNascimento}"/>
                            </div>
                         </div>
                         <div class="col-xs-6 col-sm-2 form-group">
                           <div class="input-group">
                           	<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-                          	<input id="idade" name="idade" placeholder="Idade" class="form-control" data-mask="00" required="true" type="text" th:field="*{idade}">
+                          	<input id="idade"  class="form-control" type="text" th:field="*{idade}"/>
                           </div>
                         </div>
 		
@@ -88,14 +88,14 @@ layout:decorator="'layout/LayoutPadrao'">
 							<div class="col-xs- 12 col-sm-2 form-group">
 	                          <div class="input-group">
 	                       	   	<span class="input-group-addon"><i class="glyphicon glyphicon-credit-card"></i></span>
-	                        	<input id="cpf" name="cpf"  class="form-control" data-mask="000.000.000-00" placeholder="CPF" maxlength="14" required="true" value="" type="text" th:field="*{cpf}">
+	                        	<input id="cpf" class="form-control"  type="text" th:field="*{cpf}"/>
 	                          </div>
 	                        </div>
 	                        
 	                        <div class="col-xs- 12 col-sm-2  form-group" >
 	                          <div class="input-group">
 	                        	<span class="input-group-addon"><i class="glyphicon glyphicon-credit-card"></i></span>
-	                          	<input id="nunCIC" name="rg" placeholder="RG" class="form-control" required="true" value="" type="text" th:field="*{nunCIC}">
+	                          	<input id="nunCIC"  class="form-control" type="text" th:field="*{nunCIC}"/>
 	                          </div>
 			                 </div>
 			               </div>
@@ -103,14 +103,14 @@ layout:decorator="'layout/LayoutPadrao'">
 				   		   <div class="col-xs-12 col-sm-12 form-group">
 					   		 <div class="input-group">
 					   	 	 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-					  		 <input id="nomMae" name="nmMae" placeholder="Nome do Mâe" class="form-control" required="true" type="text" th:field="*{nomMae}">
+					  		 <input id="nomMae" class="form-control"  type="text" th:field="*{nomMae}"/>
 					   	     </div>
 						   </div>
 					   
 						 	<div class="col-xs-12 col-sm-12	 form-group">
 						   	 <div class="input-group">
 						     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-						  	 <input id="nomPai" name="nmPai" placeholder="Nome do Pai" class="form-control" required="true" type="text" th:field="*{nomPai}">
+						  	 <input id="nomPai"  class="form-control" type="text" th:field="*{nomPai}"/>
 						    </div>
 							 </div>
 					   	  	</div>
@@ -121,55 +121,55 @@ layout:decorator="'layout/LayoutPadrao'">
 					   <div class="col-xs-12 col-sm-6 form-group">
 					     <div class="input-group">
 					        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-					  		<input name="email" placeholder="E-mail" class="form-control" required="true" type="email" >
+					  		<input id="email" placeholder="E-mail" class="form-control" type="email"/>
 					     </div>
 					   </div>
 						<div class="col-xs-12 col-sm-3 form-group">
 						   	<div class="input-group">
 						        <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
-						  		<input name="celular" placeholder="Celular" data-mask="(00) 0000-00000" class="form-control"  required="true"  type="text">
+						  		<input id="celular" class="form-control"   type="text"/>
 						   	</div>
 						 </div>
 						<div class="col-xs-12 col-sm-3 form-group">
 						   <div class="input-group">
 						        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-								<input name="telefone" placeholder="Telefone" data-mask="(00) 0000-0000" class="form-control" required="true"  type="text">
+								<input id="telefone"  class="form-control"   type="text"/>
 						   </div>
 					 	</div>
 					 	   <div class="col-xs-12 col-sm-6 form-group">
 					     <div class="input-group">
 					        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-					  		<input name="address" placeholder="E-mail" class="form-control" type="email">
+					  		<input id="address"  class="form-control" type="email"/>
 					     </div>
 					   </div>
 						<div class="col-xs-12 col-sm-3 form-group">
 						   	<div class="input-group">
 						        <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
-						  		<input name="address" placeholder="Celular" data-mask="(00) 0000-00000" class="form-control" type="text">
+						  		<input id="address" class="form-control" type="text"/>
 						   	</div>
 						 </div>
 						<div class="col-xs-12 col-sm-3 form-group">
 						   <div class="input-group">
 						        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-								<input name="address" placeholder="Telefone" data-mask="(00) 0000-0000" class="form-control" type="text">
+								<input id="address"  class="form-control" type="text"/>
 						   </div>
 					 	</div>
 					 	   <div class="col-xs-12 col-sm-6 form-group">
 					     <div class="input-group">
 					        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-					  		<input name="address" placeholder="E-mail" class="form-control" type="email">
+					  		<input id="address"  class="form-control" type="email"/>
 					     </div>
 					   </div>
 						<div class="col-xs-12 col-sm-3 form-group">
 						   	<div class="input-group">
 						        <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
-						  		<input name="address" placeholder="Celular" data-mask="(00) 0000-00000" class="form-control"  type="text">
+						  		<input id="address"  class="form-control"  type="text"/>
 						   	</div>
 						 </div>
 						<div class="col-xs-12 col-sm-3 form-group">
 						   <div class="input-group">
 						        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-								<input name="address" placeholder="Telefone" data-mask="(00) 0000-0000" class="form-control" type="text">
+								<input id="address" class="form-control" type="text"/>
 						   </div>
 					 	</div>
 			</div>
@@ -179,48 +179,48 @@ layout:decorator="'layout/LayoutPadrao'">
 		              <div class="col-xs-12 col-sm-6 form-group">
 					  	 <div class="input-group">
 					        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-					  		<input name="logradouro" placeholder="Endereço" class="form-control" type="text" >
+					  		<input id="logradouro"  class="form-control" type="text"/>
 					     </div>
 					 </div>
 					  	<div class="col-xs-12 col-sm-2 form-group">
 						    <div class="input-group">
 						        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-						  		<input name="numero" placeholder="Número" class="form-control"  type="text" >
+						  		<input id="numero" class="form-control"  type="text"/>
 						    </div>
 	  					</div>
 	 		 			
 	 		 			<div class="col-xs-12 col-sm-4 form-group">
 					      <div class="input-group">
 					        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-					  		<input name="complemento" placeholder="Complemento" class="form-control"  type="text" >
+					  		<input id="complemento" class="form-control"  type="text"/>
 					      </div>
 	 					 </div>
 	 					
 	 					 <div class="col-xs-12 col-sm-6 form-group">
 						    <div class="input-group">
 						        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-						  		<input name="bairro" placeholder="Bairro" class="form-control"  type="text" >
+						  		<input id="bairro" class="form-control"  type="text"/>
 						  	</div>
 						 </div>	
 					 	
 					 	<div class="col-xs-6 col-sm-2 form-group">
 						    <div class="input-group">
 						        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-						  		<input name="CEP" placeholder="CEP" data-mask="00000-000" class="form-control"  >
+						  		<input id="CEP" type="text" class="form-control"/>
 						    </div>
 						</div>
 						
 									 <div class="col-xs-12 col-sm-2 form-group">
 				    <div class="input-group">
 				        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-				  		<input name="cidade" placeholder="Cidade" class="form-control"  type="text" >
+				  		<input id="cidade" class="form-control"  type="text"/>
 				    </div>
 				 </div>
 			  
 				  <div class="col-xs-12 col-sm-2 form-group">
 				     <div class="input-group">
 				        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-				  		<input name="UF" placeholder="Estado" class="form-control"  type="text" >
+				  		<input id="UF" class="form-control"  type="text"/>
 				      </div>
 				  </div>
 						</div>
@@ -229,10 +229,9 @@ layout:decorator="'layout/LayoutPadrao'">
 		<div class="col-xs-12 col-sm-2 col-sm-offset-10 form-group ">
 			<button class="btn  btn-primary " type="submit">Salvar</button>
 			<button class="btn  btn-primary " type="submit">Cancelar</button>
-			</div>
 		</div>
 		</form>
-	</div>
+			</div>
 </section>
 </body>
 </html>
