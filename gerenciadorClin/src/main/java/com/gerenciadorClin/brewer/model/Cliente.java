@@ -1,25 +1,22 @@
 package com.gerenciadorClin.brewer.model;
 
-import java.sql.Timestamp;
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.persistence.TemporalType;
 import javax.validation.constraints.NotBlank;
-
-import org.springframework.data.jpa.repository.Temporal;
-import org.springframework.format.annotation.DateTimeFormat;
-
-
-
 
 @Entity
 @Table(name = "cliente")
-public class Cliente {
+public class Cliente implements Serializable {
+	
+ private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,11 +25,9 @@ public class Cliente {
 	@NotBlank(message="Nome é obrigatório")
 	private String nome;
 
-
 	private String numCliente;
 	
 	private String nunCIC;
-	
 	
 	private String cpf;
 	
@@ -47,6 +42,14 @@ public class Cliente {
     private Date dataNascimento;
 	
 	private int idade;
+	
+	@ManyToOne
+	@JoinColumn(name ="idEndereco")
+	private Endereco endereco;
+	
+	@ManyToOne
+	@JoinColumn(name ="idContato")
+	private Contato contato;
 
 	public Date getDataCadastro() {
 		return dataCadastro;
@@ -128,6 +131,21 @@ public class Cliente {
 		this.nome = nome;
 	}
 	
+	public Endereco getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
+	}
+	
+	public Contato getContato() {
+		return contato;
+	}
+
+	public void setContato(Contato contato) {
+		this.contato = contato;
+	}
 	
 	@Override
 	public int hashCode() {

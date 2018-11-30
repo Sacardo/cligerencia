@@ -1,3 +1,4 @@
+
 CREATE TABLE endereco (
     idEndereco BIGINT(20) PRIMARY KEY AUTO_INCREMENT,
     logradouro VARCHAR(150) NOT NULL,
@@ -8,12 +9,15 @@ CREATE TABLE endereco (
     cidade VARCHAR (50),
     uf CHAR (2)
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+    
+      
 CREATE TABLE contato(
    idContato BIGINT (20) PRIMARY KEY AUTO_INCREMENT,
    email VARCHAR(100) NOT NULL,
    celular VARCHAR(14) NOT NULL,
    telefone VARCHAR(14) NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
 CREATE TABLE cliente (
     idCliente BIGINT(20) PRIMARY KEY AUTO_INCREMENT,
@@ -25,21 +29,8 @@ CREATE TABLE cliente (
     nomPai VARCHAR (100) NOT NULL,
     idade CHAR(2),
     dataCadastro DATE,
-    horaCadastro DATE,
-    dataNascimento DATE
+    dataNascimento DATE,
+    FOREIGN KEY (id_contato) REFERENCES contato(idContato),
+    FOREIGN KEY (id_endereco) REFERENCES contato(idEndereco)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE estoque(
-   idproduto BIGINT (20)NOT NULL,
-   nameProduto  VARCHAR(20)NOT NULL,
-   quantidadeProduto INT(15),
-   valorProduto DECIMAL(10,2)
-)ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-CREATE TABLE agenda(
- idAgenda Long,
- data DATE,
- diaSemana VARCHAR(10),
- hora DATE,
- FOREIGN KEY(id_cliente) REFERENCES cliente(idCliente)
-)ENGINE=InnoDB DEFAULT CHARSET=utf8;
