@@ -7,8 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
@@ -43,14 +41,6 @@ public class Cliente implements Serializable {
 	
 	private int idade;
 	
-	@ManyToOne
-	@JoinColumn(name ="idEndereco")
-	private Endereco endereco;
-	
-	@ManyToOne
-	@JoinColumn(name ="idContato")
-	private Contato contato;
-
 	public Date getDataCadastro() {
 		return dataCadastro;
 	}
@@ -129,22 +119,6 @@ public class Cliente implements Serializable {
 	
 	public void setNome(String nome) {
 		this.nome = nome;
-	}
-	
-	public Endereco getEndereco() {
-		return endereco;
-	}
-
-	public void setEndereco(Endereco endereco) {
-		this.endereco = endereco;
-	}
-	
-	public Contato getContato() {
-		return contato;
-	}
-
-	public void setContato(Contato contato) {
-		this.contato = contato;
 	}
 	
 	@Override

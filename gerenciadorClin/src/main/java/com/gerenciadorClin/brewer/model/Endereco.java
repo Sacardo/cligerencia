@@ -1,39 +1,50 @@
 package com.gerenciadorClin.brewer.model;
 
 import java.io.Serializable;
-import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "endereco")
 public class Endereco implements Serializable {
-	
-private static final long serialVersionUID = 1L;
 
-@Id
-@GeneratedValue(strategy = GenerationType.IDENTITY )
-private Long idEndereco;
+	private static final long serialVersionUID = 1L;
 
-private String logradouro;
-private String bairro;
-private int numero;
-private String complemento;
-private String CEP;
-private String cidade;
-private String UF;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long idEndereco;
 
-@OneToMany(mappedBy ="endereco")
-	private List<Cliente> cliente;
+	private String logradouro;
+	private String bairro;
+	private int numero;
+	private String complemento;
+	private String CEP;
+	private String cidade;
+	private String UF;
+
+	@ManyToOne
+	@JoinColumn(name = "idCliente")
+	private Cliente idcliente;
+
+
+	public Cliente getIdcliente() {
+		return idcliente;
+	}
+
+	public void setIdcliente(Cliente idcliente) {
+		this.idcliente = idcliente;
+	}
 
 	public Long getIdEndereco() {
 		return idEndereco;
 	}
+
 	public void setIdEndereco(Long idEndereco) {
 		this.idEndereco = idEndereco;
 	}
@@ -41,51 +52,59 @@ private String UF;
 	public String getLogradouro() {
 		return logradouro;
 	}
+
 	public void setLogradouro(String logradouro) {
 		this.logradouro = logradouro;
 	}
+
 	public String getBairro() {
 		return bairro;
 	}
-	
+
 	public void setBairro(String bairro) {
 		this.bairro = bairro;
 	}
-	
+
 	public int getNumero() {
 		return numero;
 	}
-	
+
 	public void setNumero(int numero) {
 		this.numero = numero;
 	}
-	
+
 	public String getComplemento() {
 		return complemento;
 	}
+
 	public void setComplemento(String complemento) {
 		this.complemento = complemento;
 	}
+
 	public String getCEP() {
 		return CEP;
 	}
+
 	public void setCEP(String cEP) {
 		CEP = cEP;
 	}
+
 	public String getCidade() {
 		return cidade;
 	}
+
 	public void setCidade(String cidade) {
 		this.cidade = cidade;
 	}
+
 	public String getUF() {
 		return UF;
 	}
+
 	public void setUF(String uF) {
 		UF = uF;
 	}
 
-	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -93,7 +112,7 @@ private String UF;
 		result = prime * result + ((idEndereco == null) ? 0 : idEndereco.hashCode());
 		return result;
 	}
-	
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -110,6 +129,5 @@ private String UF;
 			return false;
 		return true;
 	}
-	
 
 }

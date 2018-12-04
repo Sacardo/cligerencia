@@ -1,90 +1,98 @@
 package com.gerenciadorClin.brewer.model;
 
 import java.io.Serializable;
-import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "contato")
 public class Contato implements Serializable {
-	
-private static final long serialVersionUID = 1L;
 
-@Id
-@GeneratedValue(strategy = GenerationType.IDENTITY)
-private Long idContato;
+	private static final long serialVersionUID = 1L;
 
-private String email;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long idContato;
 
-private String telefone;
+	private String email;
 
-private String celular;
+	private String telefone;
 
-@OneToMany(mappedBy ="contato")
-private List<Cliente> cliente;
+	private String celular;
 
-public long getIdContato() {
-	return idContato;
-}
+	@ManyToOne
+	@JoinColumn(name = "idCliente")
+	private Cliente idCliente;
 
-public void setIdContato(long idContato) {
-	this.idContato = idContato;
-}
+	public Cliente getIdCliente() {
+		return idCliente;
+	}
 
-public String getEmail() {
-	return email;
-}
+	public void setIdCliente(Cliente idCliente) {
+		this.idCliente = idCliente;
+	}
 
-public void setEmail(String email) {
-	this.email = email;
-}
+	public long getIdContato() {
+		return idContato;
+	}
 
-public String getTelefone() {
-	return telefone;
-}
+	public void setIdContato(long idContato) {
+		this.idContato = idContato;
+	}
 
-public void setTelefone(String telefone) {
-	this.telefone = telefone;
-}
+	public String getEmail() {
+		return email;
+	}
 
-public String getCelular() {
-	return celular;
-}
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
-public void setCelular(String celular) {
-	this.celular = celular;
-}
+	public String getTelefone() {
+		return telefone;
+	}
 
-@Override
-public int hashCode() {
-	final int prime = 31;
-	int result = 1;
-	result = prime * result + ((idContato == null) ? 0 : idContato.hashCode());
-	return result;
-}
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
 
-@Override
-public boolean equals(Object obj) {
-	if (this == obj)
-		return true;
-	if (obj == null)
-		return false;
-	if (getClass() != obj.getClass())
-		return false;
-	Contato other = (Contato) obj;
-	if (idContato == null) {
-		if (other.idContato != null)
+	public String getCelular() {
+		return celular;
+	}
+
+	public void setCelular(String celular) {
+		this.celular = celular;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((idContato == null) ? 0 : idContato.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
 			return false;
-	} else if (!idContato.equals(other.idContato))
-		return false;
-	return true;
-}
-
+		if (getClass() != obj.getClass())
+			return false;
+		Contato other = (Contato) obj;
+		if (idContato == null) {
+			if (other.idContato != null)
+				return false;
+		} else if (!idContato.equals(other.idContato))
+			return false;
+		return true;
+	}
 
 }
