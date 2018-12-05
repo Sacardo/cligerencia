@@ -4,9 +4,8 @@ CREATE TABLE cliente(
     nome VARCHAR(100) NOT NULL,
     nunCIC VARCHAR (12) NOT NULL,
     CPF VARCHAR (18) NOT NULL,
-    nomMae VARCHAR (100) NOT NULL,
-    nomPai VARCHAR (100) NOT NULL,
     idade CHAR(2),
+    email VARCHAR(100) NOT NULL,
     dataCadastro DATE,
     dataNascimento DATE
    ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -28,7 +27,7 @@ CREATE TABLE endereco (
       
 CREATE TABLE contato(
    idContato BIGINT (20) PRIMARY KEY AUTO_INCREMENT,
-   email VARCHAR(100) NOT NULL,
+  
    celular VARCHAR(14) NOT NULL,
    telefone VARCHAR(14) NOT NULL,
    id_Cliente BIGINT(20) NOT NULL,

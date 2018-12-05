@@ -8,7 +8,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+
+import org.hibernate.validator.constraints.br.CPF;
+
+import com.gerenciadorClin.brewer.validation.Ncl;
 
 @Entity
 @Table(name = "cliente")
@@ -20,18 +25,17 @@ public class Cliente implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idcliente;
 	
-	@NotBlank(message="Nome é obrigatório")
-	private String nome;
-
+	@Ncl
+	@NotBlank(message="Nº Cliente é obrigatório!")
 	private String numCliente;
+
+	@NotBlank(message="Nome é obrigatório!")
+	private String nome;
 	
 	private String nunCIC;
 	
+	@CPF(message="CPF é obrigatório!")
 	private String cpf;
-	
-	private String nomMae;
-	
-	private String nomPai;
 	
 	//@DateTimeFormat(pattern = "dd-MM-yyyy")
 	private Date dataCadastro;
@@ -40,6 +44,10 @@ public class Cliente implements Serializable {
     private Date dataNascimento;
 	
 	private int idade;
+	
+	@Email
+	@NotBlank(message="Email é obrigatório!")
+	private String email;
 	
 	public Date getDataCadastro() {
 		return dataCadastro;
@@ -65,22 +73,6 @@ public class Cliente implements Serializable {
 		this.idade = idade;
 	}
 
-	public String getNomMae() {
-		return nomMae;
-	}
-
-	public void setNomMae(String nomMae) {
-		this.nomMae = nomMae;
-	}
-
-	public String getNomPai() {
-		return nomPai;
-	}
-
-	public void setNomPai(String nomPai) {
-		this.nomPai = nomPai;
-	}
-	
 	public String getCpf() {
 		return cpf;
 	}
@@ -120,6 +112,14 @@ public class Cliente implements Serializable {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+
+	public String getEmail() {
+		return email;
+	}
+	
+	public void setEmail(String email) {
+		this.email = email;
+	}
 	
 	@Override
 	public int hashCode() {
@@ -146,5 +146,6 @@ public class Cliente implements Serializable {
 			return false;
 		return true;
 	}
+
 
 }

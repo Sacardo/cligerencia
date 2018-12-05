@@ -43,7 +43,7 @@ layout:decorator="'layout/LayoutPadrao'">
 					<div class="tab-pane active" id="1a">
 					
 					<br/>			
-					<div class="col-xs-12 col-sm-2 form-group">
+					<div class="col-xs-12 col-sm-2 form-group" th:classappend="${#fields.hasErrors('numCliente')} ? has-error">
                           <div class="input-group">
                          	 <span class="input-group-addon"><i class="fas fa-file-contract "></i></span>
                           	<input id="numCliente" class="form-control" type="text" th:field="*{numCliente}"/>
@@ -57,7 +57,7 @@ layout:decorator="'layout/LayoutPadrao'">
                           </div>
                         </div>
 			
-				      <div class="col-xs- 12 col-sm-12 form-group">
+				      <div class="col-xs- 12 col-sm-12 form-group" th:classappend="${#fields.hasErrors('nome')} ? has-error">
                            <div class="input-group">
                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
                            <input id="nome" class="form-control"  type="text" th:field="*{nome}"/>
@@ -78,7 +78,7 @@ layout:decorator="'layout/LayoutPadrao'">
 		
 						<div class ="container-fluid">
 						<div class="row">
-							<div class="col-xs- 12 col-sm-2 form-group">
+							<div class="col-xs- 12 col-sm-2 form-group" th:classappend="${#fields.hasErrors('cpf')} ? has-error">
 	                          <div class="input-group">
 	                       	   	<span class="input-group-addon"><i class="glyphicon glyphicon-credit-card"></i></span>
 	                        	<input id="cpf" class="form-control"  type="text" th:field="*{cpf}"/>
@@ -93,30 +93,17 @@ layout:decorator="'layout/LayoutPadrao'">
 			                 </div>
 			               </div>
 			            </div>        	
-				   		   <div class="col-xs-12 col-sm-12 form-group">
-					   		 <div class="input-group">
-					   	 	 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-					  		 <input id="nomMae" class="form-control"  type="text" th:field="*{nomMae}"/>
-					   	     </div>
-						   </div>
-					   
-						 	<div class="col-xs-12 col-sm-12	 form-group">
-						   	 <div class="input-group">
-						     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-						  	 <input id="nomPai"  class="form-control" type="text" th:field="*{nomPai}"/>
-						    </div>
-							 </div>
-					   	  	</div>
+				   		   <div class="col-xs-12 col-sm-12 form-group" th:classappend="${#fields.hasErrors('email')} ? has-error">
+					   	     <div class="input-group">
+					        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+					  		<input id="email" placeholder="E-mail" class="form-control" type="email" th:field="*{email}"/>
+					     </div>
+					   </div>
+					   	  </div>
 
                     	<div class="tab-pane" id="2a">
                     	
 		        		 <br/>			 
-					   <div class="col-xs-12 col-sm-6 form-group">
-					     <div class="input-group">
-					        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-					  		<input id="email" placeholder="E-mail" class="form-control" type="email"/>
-					     </div>
-					   </div>
 						<div class="col-xs-12 col-sm-3 form-group">
 						   	<div class="input-group">
 						        <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
