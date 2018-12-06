@@ -15,6 +15,7 @@ import org.hibernate.validator.constraints.br.CPF;
 
 import com.gerenciadorClin.brewer.validation.Ncl;
 
+
 @Entity
 @Table(name = "cliente")
 public class Cliente implements Serializable {
@@ -43,12 +44,101 @@ public class Cliente implements Serializable {
 	//@DateTimeFormat(pattern = "dd-MM-yyyy")
     private Date dataNascimento;
 	
-	private int idade;
-	
 	@Email
 	@NotBlank(message="Email é obrigatório!")
 	private String email;
 	
+	private String telefone;
+
+	private String celular;
+	
+	private String logradouro;
+
+	private String bairro;
+	
+	private int numero;
+	
+	private String complemento;
+	
+	private String CEP;
+	
+	private String cidade;
+	
+	private String UF;
+
+
+	public String getLogradouro() {
+		return logradouro;
+	}
+
+	public void setLogradouro(String logradouro) {
+		this.logradouro = logradouro;
+	}
+
+	public String getBairro() {
+		return bairro;
+	}
+
+	public void setBairro(String bairro) {
+		this.bairro = bairro;
+	}
+
+	public int getNumero() {
+		return numero;
+	}
+
+	public void setNumero(int numero) {
+		this.numero = numero;
+	}
+
+	public String getComplemento() {
+		return complemento;
+	}
+
+	public void setComplemento(String complemento) {
+		this.complemento = complemento;
+	}
+
+	public String getCEP() {
+		return CEP;
+	}
+
+	public void setCEP(String cEP) {
+		CEP = cEP;
+	}
+
+	public String getCidade() {
+		return cidade;
+	}
+
+	public void setCidade(String cidade) {
+		this.cidade = cidade;
+	}
+
+	public String getUF() {
+		return UF;
+	}
+
+	public void setUF(String uF) {
+		UF = uF;
+	}
+
+	public String getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+
+	public String getCelular() {
+		return celular;
+	}
+
+	public void setCelular(String celular) {
+		this.celular = celular;
+	}
+
 	public Date getDataCadastro() {
 		return dataCadastro;
 	}
@@ -63,14 +153,6 @@ public class Cliente implements Serializable {
 
 	public void setDataNascimento(Date dataNascimento) {
 		this.dataNascimento = dataNascimento;
-	}
-
-	public int getIdade() {
-		return idade;
-	}
-
-	public void setIdade(int idade) {
-		this.idade = idade;
 	}
 
 	public String getCpf() {
@@ -129,7 +211,6 @@ public class Cliente implements Serializable {
 		return result;
 	}
 
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -146,6 +227,4 @@ public class Cliente implements Serializable {
 			return false;
 		return true;
 	}
-
-
 }
