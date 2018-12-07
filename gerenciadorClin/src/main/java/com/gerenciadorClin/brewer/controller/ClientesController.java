@@ -48,7 +48,7 @@ public class ClientesController {
 	@GetMapping()
 	public ModelAndView pesquisar(ClienteFilter clienteFIlter, BindingResult result){
 		ModelAndView mv = new ModelAndView("cliente/pesquisarClientes");
-		mv.addObject("clientes", clientes.findAll());
+		mv.addObject("clientes", clientes.filtrar(clienteFIlter));
 		return mv;
 	}
 
