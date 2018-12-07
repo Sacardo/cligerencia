@@ -26,7 +26,7 @@ public class ClientesController {
 
 	@RequestMapping("/novo")	
 	public ModelAndView novo(Cliente cliente) {
-		ModelAndView vw = new ModelAndView("cliente/pesquisarClientes");
+		ModelAndView vw = new ModelAndView("cliente/cadastrarClientes");
 		return vw;
 	}
 	
@@ -39,16 +39,12 @@ public class ClientesController {
 		attributes.addFlashAttribute("mensagem","Cliente salvo com sucesso!");
 		return new ModelAndView ("redirect:/clientes/novo");
 	}
-	
-	private ModelAndView ModelAndView(String string) {
-		return null;
-	}
-	
-	/*@GetMapping("/pesquisar")
+		
+	@GetMapping()
 	public ModelAndView pesquisar() {
 		ModelAndView mv = new ModelAndView("cliente/pesquisarClientes");
 		return mv;
-	}*/
+	}
 
 
 }

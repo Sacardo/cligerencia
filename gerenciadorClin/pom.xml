@@ -39,7 +39,7 @@
 		<!-- JPA / Hibernate -->
         <hibernate.version>5.3.7.Final</hibernate.version>
         
-        <mysql-connector-java.version>8.0.11</mysql-connector-java.version>
+        <mysql-connector-java.version>8.0.13</mysql-connector-java.version>
         
         <!-- Spring Data JPA -->
 		<spring-data-jpa.version>2.1.2.RELEASE</spring-data-jpa.version>
