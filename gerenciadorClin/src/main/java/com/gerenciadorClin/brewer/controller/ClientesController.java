@@ -13,6 +13,8 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.gerenciadorClin.brewer.model.Cliente;
+import com.gerenciadorClin.brewer.repository.Clientes;
+import com.gerenciadorClin.brewer.repository.filter.ClienteFilter;
 import com.gerenciadorClin.brewer.service.cadastroClienteService;
 
 @Controller
@@ -21,7 +23,10 @@ public class ClientesController {
 	
 
    @Autowired
-   private cadastroClienteService clienteService; 
+   private cadastroClienteService clienteService;
+   
+   @Autowired
+   private Clientes clientes;
 	
 
 	@RequestMapping("/novo")	
@@ -41,8 +46,9 @@ public class ClientesController {
 	}
 		
 	@GetMapping()
-	public ModelAndView pesquisar() {
+	public ModelAndView pesquisar(ClienteFilter clienteFIlter){
 		ModelAndView mv = new ModelAndView("cliente/pesquisarClientes");
+		mv.addObject("clientes", clientes.findAll());
 		return mv;
 	}
 

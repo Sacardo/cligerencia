@@ -1,0 +1,45 @@
+/* Tabela Simples */
+.bw-tabela-simples {
+	margin-top: 15px;
+}
+
+.bw-tabela-simples table tr th {
+	border-bottom-width: 1px;
+}
+
+.bw-tabela-simples table tr td {
+    border-top: none;
+    border-bottom: 1px solid #e7eaec;
+    padding: 10px;
+    vertical-align: middle;
+}
+
+/*
+###################
+# PÁGINAS DO SISTEMA
+###################
+*/
+
+
+/* Colunas - Pesquisa de Clientes */
+.table-cliente-col-n {
+	min-width: 10px;
+	width: 10px;
+	text-align: left;
+}
+
+.table-cliente-col-nome {
+	width: 500px;
+	text-align: center;
+	bgcolor:"#428bca";
+}
+
+.table-cliente-col-telefone {
+	width: 120px;
+	text-align: center;
+}
+
+.table-cliente-col-email {
+	width: 30px;
+	text-align: center;
+}

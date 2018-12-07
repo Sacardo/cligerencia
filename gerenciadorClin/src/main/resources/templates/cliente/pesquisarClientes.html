@@ -13,26 +13,52 @@
 		<div class="page-header top-fix">
 			<div class="container-fluid">
 				<div class="row">
-				   <div class="col-sm-10">
+					<div class="col-sm-10">
 						<h1>Pesquisa de Clientes</h1>
 					</div>
 					<div class="col-sm-2">
 						<br>
 						<div clas="aw-page-header-controls">
-							<a class="btn  btn-primary" th:href="@{/clientes/novo}"> <i class="fas fa-user-plus"></i><span
-								class="hiddens-xs hidden-sm">  Novo Cliente</span>
+							<a class="btn  btn-primary" th:href="@{/clientes/novo}"> <i
+								class="fas fa-user-plus"></i> <span class="hiddens-xs hidden-sm">
+									Novo </span>
 							</a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-
 		<div class="container-fluid">
-			<div class="row"></div>
+			<form method="GET" th:object="${clienteFilter}">
+				<div class="row">
+					<div class="col-xs-6 col-sm-1 form-group bw-required">
+						<div class="input-group">
+							<span class="input-group-addon"> <i class="fas fa-search"></i>
+							</span> <input id="nome" class="form-control" type="text" data-mask="CL0000"
+								placeholder="Nº" />
+						</div>
+					</div>
+					<div class="col-xs-12 col-sm-10 form-group bw-required">
+						<div class="input-group">
+							<span class="input-group-addon"> <i class="fas fa-search"></i>
+							</span> <input id="nome" class="form-control" type="text"
+								placeholder="Nome Cliente" />
+						</div>
+					</div>
+					<div class="col-xs-4 col-sm-1 form-group bw-required">
+						<div class="input-group">
+							<a class="btn  btn-primary" th:href="@{/clientes/novo}"> <i
+								class="fas fa-search"></i> <span class="hiddens-xs hidden-sm">
+									Pesquisar </span>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+			<div class="container-fluid">
+		<div th:replace="layout/fragmentos/tabelaCliente :: tabelapesquisaCliente"></div>
 		</div>
-
-
 	</section>
 </body>
 </html>

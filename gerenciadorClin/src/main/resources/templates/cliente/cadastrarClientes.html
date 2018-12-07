@@ -1,182 +1,213 @@
 <!DOCTYPE html>
 <html lang="pt" xmlns="http://www.w3.org/1999/xhtml"
-xmlns:th="http://www.thymeleaf.org"
-xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-layout:decorator="'layout/LayoutPadrao'"
-xmlns:brewer="http://Cli.gerencidador.com">
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="'layout/LayoutPadrao'"
+	xmlns:brewer="http://Cli.gerencidador.com">
 <head>
-	<title>Cadastro de Cliente</title>
+<title>Cadastro de Cliente</title>
 </head>
 <body>
-		<section layout:fragment="conteudo">
+	<section layout:fragment="conteudo">
 
-				<div class="page-header top-fix">
-					<div class="container-fluid">
-						<h1>
-							Cadastro de Cliente
-						</h1>
+		<div class="page-header top-fix">
+			<div class="container-fluid">
+				<div class="row">
+				   <div class="col-sm-10">
+						<h1>Cadastrar de Clientes</h1>
+					</div>
+					<div class="col-sm-2">
+						<br>
+						<div clas="aw-page-header-controls">
+							<a class="btn  btn-primary" th:href="@{/clientes}"> 
+							<i class="fas fa-search"></i>
+							<span class="hiddens-xs hidden-sm"> Pesquisar </span>
+							</a>
+						</div>
 					</div>
 				</div>
-				
-	<div class="container-fluid">
-	
-	   
-		<form  data-toggle="validator" method="POST" th:object="${cliente}" class="form-vertical  js-form-loading">
-	
-			<brewer:message/>
-			
-		       <div class="row">
-						<ul  class="nav nav-tabs">
-								<li class="active"> 
-									<a href="#1a" data-toggle="tab">Dados Pessoais</a>
-								</li>
-								<li>
-									<a href="#2a" data-toggle="tab">Endereço</a>
-								</li>
-							
-					  	</ul>
+			</div>
 		</div>
+		<div class="container-fluid">
+			<form data-toggle="validator" method="POST" th:object="${cliente}"
+				class="form-vertical  js-form-loading">
 
+				<brewer:message />
+
+				<div class="row">
+					<ul class="nav nav-tabs">
+						<li class="active"><a href="#1a" data-toggle="tab">Dados
+								Pessoais</a></li>
+						<li><a href="#2a" data-toggle="tab">Endereço</a></li>
+
+					</ul>
+				</div>
 				<div class="tab-content clearfix">
-
 					<div class="tab-pane active" id="1a">
-					
-					<br/>			
-					<div class="col-xs-12 col-sm-2 form-group bw-required" brewer:classforerror="numCliente">
-					<label for="nome" class="control-label">Nº Cliente</label>
-                          <div class="input-group">
-                         	 <span class="input-group-addon"><i class="fas fa-file-contract"></i></span>
-                         	 <input id="numCliente" class="form-control" type="text" th:field="*{numCliente}" data-mask="CL0000" placeholder="Nº Cliente"/>
-                          </div>
-                        </div>
-			
-					<div class="col-xs-6 col-sm-2 form-group">
-					<label for="nome" class="control-label">Data Cadastro</label>
-                         <div class="input-group">
-                         	 <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-                          	<input id="dataCadastro" class="form-control" type="text" />
-                          </div>
-                        </div>
-					<div class="col-xs-6 col-sm-2 form-group">
-					<label for="nome" class="control-label">Data Nascimento</label>
-                           <div class="input-group">
-                           	<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-                           	<input id="dataNascimento"  class="form-control" type="text"/>
-                           </div>
-                        </div>
-				      <div class="col-xs- 12 col-sm-12 form-group bw-required" brewer:classforerror="nome">
-				      	<label for="nome" class="control-label">Nome Cliente</label>
-                           <div class="input-group">
-                           <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                           <input id="nome" class="form-control"  type="text" th:field="*{nome}" placeholder="Nome Cliente"/>
-                         </div>
-                         </div>
-						<div class ="container-fluid">
-						<div class="row">
-							<div class="col-xs- 12 col-sm-2 form-group bw-required" brewer:classforerror="cpf">
-							<label for="nome" class="control-label">CPF</label>
-	                          <div class="input-group">
-	                       	   	<span class="input-group-addon"><i class="glyphicon glyphicon-credit-card"></i></span>
-	                        	<input id="cpf" class="form-control"  type="text" th:field="*{cpf}" data-mask="000.000.000-00" placeholder="CPF - 000.000.000-00"/>
-	                          </div>
-	                        </div>
-	                        
-	                        <div class="col-xs-12 col-sm-2  form-group" >
-	                         	<label for="nome" class="control-label">RG</label>
-	                          <div class="input-group">
-	                        	<span class="input-group-addon"><i class="glyphicon glyphicon-credit-card"></i></span>
-	                          	<input id="nunCIC"  class="form-control" type="text" th:field="*{nunCIC}" placeholder="RG Cliente"/>
-	                          </div>
-			                 </div>
-			               </div>
-			            </div>     
-				   		   <div class="col-xs-12 col-sm-6 form-group bw-required" brewer:classforerror="email">
-				   		   <label for="nome" class="control-label">E-mail</label>
-					   	     <div class="input-group">
-					        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-					  		<input id="email" placeholder="E-mail" class="form-control" type="email" th:field="*{email}"/>
-					  		</div>
-					  		</div>
-					  		<div class="col-xs-12 col-sm-3 form-group">
-					  		 	<label for="nome" class="control-label">Celular</label>
-						   	<div class="input-group">
-						        <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
-						  		<input id="celular" class="form-control" type="text" data-mask="(00)-00000-0000" placeholder="Celular"/>
-						   	</div>
-						 </div>
+						<br />
+						<div class="col-xs-12 col-sm-2 form-group bw-required"
+							brewer:classforerror="numCliente">
+							<label for="nome" class="control-label">Nº Cliente</label>
+							<div class="input-group">
+								<span class="input-group-addon"><i
+									class="fas fa-file-contract"></i></span> <input id="numCliente"
+									class="form-control" type="text" th:field="*{numCliente}"
+									data-mask="CL0000" placeholder="Nº Cliente" />
+							</div>
+						</div>
+
+						<div class="col-xs-6 col-sm-2 form-group">
+							<label for="nome" class="control-label">Data Cadastro</label>
+							<div class="input-group">
+								<span class="input-group-addon"><i
+									class="glyphicon glyphicon-calendar"></i></span> <input
+									id="dataCadastro" class="form-control" type="text" />
+							</div>
+						</div>
+						<div class="col-xs-6 col-sm-2 form-group">
+							<label for="nome" class="control-label">Data Nascimento</label>
+							<div class="input-group">
+								<span class="input-group-addon"><i
+									class="glyphicon glyphicon-calendar"></i></span> <input
+									id="dataNascimento" class="form-control" type="text" />
+							</div>
+						</div>
+						<div class="col-xs- 12 col-sm-12 form-group bw-required"
+							brewer:classforerror="nome">
+							<label for="nome" class="control-label">Nome Cliente</label>
+							<div class="input-group">
+								<span class="input-group-addon"><i
+									class="glyphicon glyphicon-user"></i></span> <input id="nome"
+									class="form-control" type="text" th:field="*{nome}"
+									placeholder="Nome Cliente" />
+							</div>
+						</div>
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col-xs- 12 col-sm-2 form-group bw-required"
+									brewer:classforerror="cpf">
+									<label for="nome" class="control-label">CPF</label>
+									<div class="input-group">
+										<span class="input-group-addon"><i
+											class="glyphicon glyphicon-credit-card"></i></span> <input id="cpf"
+											class="form-control" type="text" th:field="*{cpf}"
+											data-mask="000.000.000-00" placeholder="CPF - 000.000.000-00" />
+									</div>
+								</div>
+
+								<div class="col-xs-12 col-sm-2  form-group">
+									<label for="nome" class="control-label">RG</label>
+									<div class="input-group">
+										<span class="input-group-addon"><i
+											class="glyphicon glyphicon-credit-card"></i></span> <input
+											id="nunCIC" class="form-control" type="text"
+											th:field="*{nunCIC}" placeholder="RG Cliente" />
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-12 col-sm-6 form-group bw-required"
+							brewer:classforerror="email">
+							<label for="nome" class="control-label">E-mail</label>
+							<div class="input-group">
+								<span class="input-group-addon"><i
+									class="glyphicon glyphicon-envelope"></i></span> <input id="email"
+									placeholder="E-mail" class="form-control" type="email"
+									th:field="*{email}" />
+							</div>
+						</div>
 						<div class="col-xs-12 col-sm-3 form-group">
-						 	<label for="nome" class="control-label">Telefone Fixo</label>
-						   <div class="input-group">
-						        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
-								<input id="telefone"  class="form-control"   type="text" data-mask="(00)-0000-0000" placeholder="Telefone"/>
-						   </div>
-					 	</div>
-					  </div>
-                    	<div class="tab-pane" id="2a">
-		        		 <br/>			                 	
-		              <div class="col-xs-12 col-sm-6 form-group">
-		               	<label for="nome" class="control-label">Endereço</label>
-					  	 <div class="input-group">
-					        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-					  		<input id="logradouro"  class="form-control" type="text" placeholder="Endereço"/>
-					     </div>
-					 </div>
-					  	<div class="col-xs-12 col-sm-2 form-group">
-					  	 	<label for="nome" class="control-label">Número</label>
-						    <div class="input-group">
-						        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-						  		<input id="numero" class="form-control" type="text" placeholder="Numero"/>
-						    </div>
-	  					</div>
-	 		 			
-	 		 			<div class="col-xs-12 col-sm-4 form-group">
-	 		 			 	<label for="nome" class="control-label">Complemento</label>
-					      <div class="input-group">
-					        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-					  		<input id="complemento" class="form-control"  type="text" placeholder="Complemento"/>
-					      </div>
-	 					 </div>
-	 					
-	 					 <div class="col-xs-12 col-sm-6 form-group">
-	 					  	<label for="nome" class="control-label">Bairro</label>
-						    <div class="input-group">
-						        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-						  		<input id="bairro" class="form-control"  type="text" placeholder="Bairro"/>
-						  	</div>
-						 </div>	
-					 	
-					 	<div class="col-xs-6 col-sm-2 form-group">
-					 	 	<label for="nome" class="control-label">CEP</label>
-						    <div class="input-group">
-						        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-						  		<input id="CEP" type="text" class="form-control"placeholder="CEP - 00000-000" data-mask="00000-000"/>
-						    </div>
+							<label for="nome" class="control-label">Celular</label>
+							<div class="input-group">
+								<span class="input-group-addon"><i
+									class="glyphicon glyphicon-phone"></i></span> <input id="celular"
+									class="form-control" type="text" data-mask="(00)-00000-0000"
+									placeholder="Celular" />
+							</div>
 						</div>
-						
-					<div class="col-xs-12 col-sm-2 form-group">
-				     <label for="nome" class="control-label">Cidade</label>
-				    <div class="input-group">
-				        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-				  		<input id="cidade" class="form-control"  type="text" placeholder="Cidade"/>
-				    </div>
-				 </div>
-			  
-				  <div class="col-xs-12 col-sm-2 form-group">
-				   	<label for="nome" class="control-label">UF</label>
-				     <div class="input-group">
-				        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-				  		<input id="UF" class="form-control"  type="text" placeholder="UF"/>
-				      </div>
-				  </div>
+						<div class="col-xs-12 col-sm-3 form-group">
+							<label for="nome" class="control-label">Telefone Fixo</label>
+							<div class="input-group">
+								<span class="input-group-addon"><i
+									class="glyphicon glyphicon-earphone"></i></span> <input id="telefone"
+									class="form-control" type="text" data-mask="(00)-0000-0000"
+									placeholder="Telefone" />
+							</div>
 						</div>
-			</div>
-		
-		<div class="col-xs-12 col-sm-2 col-sm-offset-10 form-group ">
-			<button class="btn  btn-primary " type="submit">Salvar</button>
-			<button class="btn  btn-primary " type="submit">Cancelar</button>
+					</div>
+					<div class="tab-pane" id="2a">
+						<br />
+						<div class="col-xs-12 col-sm-6 form-group">
+							<label for="nome" class="control-label">Endereço</label>
+							<div class="input-group">
+								<span class="input-group-addon"><i
+									class="glyphicon glyphicon-home"></i></span> <input id="logradouro"
+									class="form-control" type="text" placeholder="Endereço" />
+							</div>
+						</div>
+						<div class="col-xs-12 col-sm-2 form-group">
+							<label for="nome" class="control-label">Número</label>
+							<div class="input-group">
+								<span class="input-group-addon"><i
+									class="glyphicon glyphicon-home"></i></span> <input id="numero"
+									class="form-control" type="text" placeholder="Numero" />
+							</div>
+						</div>
+
+						<div class="col-xs-12 col-sm-4 form-group">
+							<label for="nome" class="control-label">Complemento</label>
+							<div class="input-group">
+								<span class="input-group-addon"><i
+									class="glyphicon glyphicon-home"></i></span> <input id="complemento"
+									class="form-control" type="text" placeholder="Complemento" />
+							</div>
+						</div>
+
+						<div class="col-xs-12 col-sm-6 form-group">
+							<label for="nome" class="control-label">Bairro</label>
+							<div class="input-group">
+								<span class="input-group-addon"><i
+									class="glyphicon glyphicon-home"></i></span> <input id="bairro"
+									class="form-control" type="text" placeholder="Bairro" />
+							</div>
+						</div>
+
+						<div class="col-xs-6 col-sm-2 form-group">
+							<label for="nome" class="control-label">CEP</label>
+							<div class="input-group">
+								<span class="input-group-addon"><i
+									class="glyphicon glyphicon-home"></i></span> <input id="CEP"
+									type="text" class="form-control" placeholder="CEP - 00000-000"
+									data-mask="00000-000" />
+							</div>
+						</div>
+
+						<div class="col-xs-12 col-sm-2 form-group">
+							<label for="nome" class="control-label">Cidade</label>
+							<div class="input-group">
+								<span class="input-group-addon"><i
+									class="glyphicon glyphicon-home"></i></span> <input id="cidade"
+									class="form-control" type="text" placeholder="Cidade" />
+							</div>
+						</div>
+
+						<div class="col-xs-12 col-sm-2 form-group">
+							<label for="nome" class="control-label">UF</label>
+							<div class="input-group">
+								<span class="input-group-addon"><i
+									class="glyphicon glyphicon-home"></i></span> <input id="UF"
+									class="form-control" type="text" placeholder="UF" />
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-xs-12 col-sm-2 col-sm-offset-10 form-group ">
+					<button class="btn  btn-primary " type="submit">Salvar</button>
+					<button class="btn  btn-primary " type="submit">Cancelar</button>
+				</div>
+			</form>
 		</div>
-		</form>
-			</div>
-</section>
+	</section>
 </body>
 </html>
